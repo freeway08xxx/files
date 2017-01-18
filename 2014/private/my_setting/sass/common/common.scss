@@ -1,0 +1,44 @@
+@charset "utf-8";
+// ===================================================================
+// v1.0 | basic
+// ===================================================================
+// ------------------------------------
+// 各SCSSファイルのインポート・設定
+// ------------------------------------
+$experimental-support-for-webkit : true !default;
+$experimental-support-for-mozilla : false !default;
+$experimental-support-for-opera : false !default;
+$experimental-support-for-microsoft : false !default;
+$support-ie6: false;
+$support-ie7: false;
+$support-ie8: false;
+
+@import "compass";
+@import "compass/reset";
+
+// mixin
+@import "mixin";
+
+// 共通設定
+@import "setting";
+
+//ヘッダー・フッター・パン屑・タイトル
+@import "module_parts";
+
+// 検索窓・チェックボックス・ラジオボタン・入力フォーム
+@import "module_form";
+
+// グリッド
+@import "module_grid";
+
+//　アコーディオン・タブ 
+@import "module_action";
+
+//　カルーセル
+@import "module_carousel";
+
+
+
+
+
+

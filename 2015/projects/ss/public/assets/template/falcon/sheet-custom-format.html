@@ -1,0 +1,70 @@
+<div class="modal-header">
+	<button class="pull-right btn btn-link close-icon" ng-click="$dismiss()">
+		<span class="glyphicon glyphicon-remove"></span>
+	</button>
+	<h4>カスタムフォーマットを使用する</h4>
+</div>
+
+<div class="modal-body custom-format">
+
+	<div class="form-group">
+		<div ng-show="!customformat.isRegistered()" class="input-custom-format">
+			<label class="control-label">
+				カスタムフォーマットファイル
+				<span class="label label-warning">xls</span>
+			</label>
+
+			<ss-input-file ng-model="sheet.models.customformat.file" button-value="'選択'">
+		</div>
+
+		<div ng-show="!customformat.isRegistered()" class="top_10px">
+			<a ng-click="customformat.downloadPattern()">
+				<span class="glyphicon glyphicon-save"></span>
+				{{customformat.getPatternLabal()}} サンプルフォーマットをダウンロード
+			</a>
+		</div>
+
+		<div ng-show="customformat.isRegistered()" class="">
+			<span class="label label-info label-registered">カスタムフォーマット登録済</span>
+
+			<div class="clearfix">
+				<button type="button" class="btn btn-default btn-xs pull-left"
+				 ng-click="customformat.downloadFormat()">
+					 <span class="glyphicon glyphicon-save"></span>
+					登録済ファイルをダウンロード
+				</button>
+
+				<div class="pull-right">
+					<label for="delete_custom_format">
+						<input type="checkbox" id="delete_custom_format"
+						 ng-model="sheet.models.customformat.is_delete_format" value="1">
+						 登録済フォーマットを削除
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="alert alert-warning">
+		<span ng-show="!customformat.isRegistered()">
+			予め加工したExcelファイルをフォーマットとして使用できます。
+		</span>
+
+		<span ng-show="customformat.isRegistered()">
+			登録済フォーマットを削除したい場合は、「登録済フォーマットを削除」にチェックを入れ、テンプレートを保存してください。
+		</span>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-sm btn-primary" ng-click="customformat.save()">
+		上記内容で設定する
+	</button>
+	<button class="btn btn-sm btn-default" ng-click="customformat.cancel()">
+		キャンセル
+	</button>
+</div>
+
+
+<!-- for Download Report -->
+<form name="dl_format_form" id="dlFormat"></form>

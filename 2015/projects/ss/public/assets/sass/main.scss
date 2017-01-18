@@ -1,0 +1,412 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+/* fontFamily */
+body, textarea { font-family: Verdana, Arial, "メイリオ", "ＭＳ Ｐゴシック", sans-serif; }
+input, select { font-family: Arial, "ＭＳ Ｐゴシック", sans-serif; }
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/********************
+ * Override Settings
+ *****/
+
+i[class^="icon-"] {
+    min-width: 1rem;
+    margin-right: 2px;
+}
+
+input[type="text"] {
+    padding: 3px 6px;
+}
+
+.btn-default {
+    &:hover {
+        background-color: #f0f0f0;
+    }
+}
+.btn-info {
+    &:hover {
+        background-color: #7EDDF9;
+    }
+}
+.btn-primary {
+    &:hover {
+        background-color: #3A8CD3;
+    }
+}
+.btn-success {
+    &:hover {
+        background-color: #68C268;
+    }
+}
+.btn-warning {
+    &:hover {
+        background-color: #FFB757;
+    }
+}
+.btn-danger {
+    &:hover {
+        background-color: #EC645F;
+    }
+}
+
+
+input.ng-invalid,
+input.invalid {
+    border: 1px solid $color_em_red;
+}
+
+/********************
+ * Section Style
+ *****/
+
+.wrap {
+    min-height: 100%;
+}
+.wrap:after {
+    content: "";
+    display: block;
+}
+
+
+.header {
+    @include border-radius(0);
+    border: none;
+    margin-bottom: 0;
+    min-height: ($gridbase * 4.5);
+    background-color: $color_bg_header;
+
+    // header logo
+    .logo {
+        margin-left: -5px;
+        a {
+            color: $color_bg;
+            img {
+                padding: $gridbase ($gridbase * 2) ($gridbase + 1px) 0;
+                width: 142px;
+            }
+        }
+    }
+
+    .navbar-nav {
+        // mod size
+        & > li {
+            & > a {
+                padding: $gridbase ($gridbase * 1.5) ($gridbase + 2px) ($gridbase * 1.5);
+                font-size: 13px;
+                line-height: 18px !important;
+                .glyphicon-triangle-bottom:before{
+                    font-size: 10px;
+                }
+            }
+        }
+        // link color
+        li {
+            a { color: $color_header_link; }
+            &:hover > a { background-color: $color_sub; }
+            &:active > a { background-color: $color_sub; }
+            &:focus > a { background-color: $color_sub; }
+            &:visited > a { background-color: $color_sub; }
+        }
+        .open {
+            & > a {
+
+                background-color: $color_sub;
+
+            }
+        }
+        .dropdown-menu {
+            & > li {
+                a {
+                    display: block;
+                    font-size: 1.3rem;
+                    line-height: 1.6;
+                    color: $color_header_dropdown_link;
+                }
+
+            }
+        }
+
+        // angular-ui dropdown
+        span.dropdown {
+            .dropdown-toggle {
+                padding: $gridbase;
+                display: inline-block;
+                color: $color_header_link;
+            }
+            &:hover > a {
+                background-color: $color_sub;
+                text-decoration: none;
+            }
+            &:active > a {
+                background-color: $color_sub;
+                text-decoration: none;
+            }
+        }
+
+
+
+    }
+
+    // right Menu
+    .navbar-right {
+        padding-left: ($gridbase * 4) - 2px;
+    }
+    .info-menu {
+        a {
+            padding: ($gridbase - 1px) $gridbase !important;
+            &:hover, &:focus, &:active, {
+                text-decoration: none;
+            }
+        }
+        .info-menu-count {
+            display: block;
+            padding: .5rem .6rem;
+            height: (($gridbase * 2) + ($gridbase - 2px));
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+    }
+
+    // tune for Wide Dropdown Menu (powered by yamm)
+    .header-menu {
+        // reset positions
+        .nav, .collapse, .dropup, .dropdown {
+            position: static;
+        }
+
+        // propagate menu position under container for fw navbars
+        .container {
+            position: relative;
+        }
+
+        // by default aligns menu to left
+        .dropdown-menu {
+            padding:0;
+            left: auto;
+            &.personal{
+                padding:$gridbase +4 0;
+                .myglyphicon_0:before {content: "\e109";}//task tracker
+                .myglyphicon_1:before {content: "\e032";}//mypage
+                .myglyphicon_2:before {content: "\e166";}//download
+                .divider{
+                    margin:$gridbase - 2px 0;
+                }
+                a{
+                    font-size: 1.2rem;
+                    padding: 2px 20px;
+                }
+            }
+        }
+
+        // Content with padding
+        .content {
+            padding:0 ($gridbase * 2);
+        }
+
+        .dropdown-category{
+            float:left;padding:($gridbase *2)-2px $gridbase *2;
+        }
+
+        // Fullwidth menu
+        .dropdown.fw .dropdown-menu {
+            left: 0; right: 0;
+        }
+    }
+}
+
+.main-content {
+    margin-top: 20px;
+    min-width: 700px;
+}
+.sub-content {
+  margin-bottom: 20px;
+}
+
+
+/********************
+ * Block Parts
+ *****/
+
+.contents-wrap {
+    background-color: $color_bg_contents;
+}
+
+.title-area {
+    padding: 0 ($contents_padding - 2px);
+    .page-title {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 13px 30px 14px 0;
+        font-size: 20px;
+        .logo-img {
+            display: none;
+        }
+        &.logo {
+            & > .text {
+                display: none;
+            }
+            & > .logo-img {
+                display: inline-block;
+                margin: -4px 0 -2px 0;
+                & > img {
+                    max-height: 28px;
+                }
+            }
+        }
+    }
+    .contents-nav {
+        display: inline-block;
+        vertical-align: middle;
+        & > li {
+            & > a {
+                padding: 5px ($contents_padding / 2);
+            }
+        }
+        // nav Label
+        .label {
+            margin: ($gridbase / 2) ($gridbase / 2) 0 (($gridbase * 2) + ($gridbase / 2));
+            padding: ($gridbase - 2px) $gridbase;
+            font-weight: normal;
+            line-height: 1rem;
+        }
+    }
+}
+.contents-area {
+    @include line-top($op1: .15);
+    padding: 0 $contents_padding;
+    background-color: $color_bg;
+    .nav-tabs {
+        &:first-child {
+            @include line-top(.07);
+            margin: (-$contents_padding / 2 - 1px) (-$contents_padding) 0 (-$contents_padding);
+            padding-top: $gridbase;
+            padding-left: $contents_padding;
+            background-color: $color_bg_contents_nav_tab;
+        }
+    }
+    .tab-pane {
+        padding: ($contents_padding / 2) 0 $gridbase 0;
+    }
+}
+.alert-area {
+    padding-top: ($gridbase * 3);
+}
+
+.form-container {
+    .block-title {
+        margin-top: ($gridbase * 2);
+        margin-bottom: ($contents_padding / 2);
+        .title {
+            margin: 0;
+            &.inline {
+                display: inline-block;
+                margin-right: ($gridbase * 2);
+            }
+        }
+    }
+    .form-block {
+        margin-bottom: $contents_padding + $gridbase;
+        .controls {
+            padding-bottom: 14px;
+            background-color: #f7f7f7;
+        }
+        .control-label {
+            margin-top: $gridbase;
+            margin-bottom: ($contents_padding / 2);
+            font-weight: bold;
+            &.form-inline {
+                margin-bottom: ($gridbase / 2);
+            }
+        }
+    }
+}
+
+.btn-area {
+    @include line-top($op1: .1);
+    padding-top: ($contents_padding / 2);
+}
+
+.table-wrap {
+    margin-bottom: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+.report-table {
+    margin:0 0 ($gridbase * 2) 0;
+    width: auto;
+    min-width: 100%;
+    white-space: nowrap;
+    tr {
+        th, td {
+            font-size: 0.9rem;
+        }
+        th:first-child,
+        td:first-child {
+            font-weight: normal;
+        }
+    }
+}
+
+
+// modal window close icon (X)
+.close-icon {
+    color: #aaa;
+}
+// msg Close icon (X) : position mod
+.msg-area {
+    .close-icon {
+        padding: 0;
+    }
+}
+
+// modal background box-shadow
+.modal-open {
+    .modal {
+        background-color: rgba(0, 0, 0, .4);
+    }
+}
+
+// account id etc. id-label
+.label.id {
+    padding: 1px 6px;
+    background-color: $color_bg;
+    border: 1px solid $color_border;
+    color: #444;
+    font-weight: normal;
+}
+
+/**
+ * media_icon near account id
+ * Default Setting
+ */
+.icon-media {
+    display: inline-block;
+    width: 16px;
+}
+
+.disable-select {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+/********************
+ * Load Modules (after main structures)
+ ****/
+@import "_modules/all";

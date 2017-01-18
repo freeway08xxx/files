@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+.caution {
+    padding: 8px 0;
+}
+
+// レポート作成
+.form-container {
+    padding-right: 15px;
+}
+
+.form-col {
+    @include line-right;
+    padding-right: 24px;
+    .loading {
+        padding-top: 6px;
+        margin-left: 12px;
+        .progress {
+            margin-bottom: 0;
+            width: 50px;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+    }
+}
+.form-control {
+    &.filter-select {
+        height: 120px;
+    }
+    &.filter-textarea {
+        height: 120px;
+    }
+}
+
+.templatelist-col {
+    padding-right: 0;
+    .templatelist-wrap {
+        padding: 6px 0 0 0;
+        overflow-y: auto;
+    }
+    .template-list {
+        td {
+            padding-bottom: 12px;
+        }
+        .title-row {
+            padding-bottom: 8px;
+            .name {
+                font-size: 1.5rem;
+            }
+        }
+        .info-panel {
+            padding: 4px 8px;
+            font-size: 1.2rem;
+            background: #888;
+        }
+        .active {
+            background-color: $color_sub;
+            &:hover {
+                background-color: $color_sub;
+            }
+            & .name {
+                color: #fff;
+            }
+            & > .info-panel {
+                color: #666;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+// レポート出力画面 表示調整用
+.reportdisplay {
+    position: relative;
+    top: 16px;
+}
+
+// レポート表示
+.reportview-table {
+    .report-value {
+        padding: 0;
+        & > table > tbody > tr > td {
+            border-top: none;
+        }
+    }
+    .report-value-table {
+        margin-bottom: 0;
+        width: 100%;
+        .index {
+            width: 40%;
+            min-width: 70px;
+            border-right: 1px solid $color_border;
+        }
+    }
+    .summary-unit {
+        background-color: #fff!important;
+    }
+}
+.backlink {
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+// 作成済レポート一覧
+.history-table {
+    tbody {
+        tr {
+            cursor: pointer;
+            &:hover {
+                td {
+                    background-color: $color_bg_tr_link_hover!important;
+                }
+            }
+        }
+    }
+}
+
+// テンプレート保存・編集
+.modal-content {
+    .name {
+        margin-bottom: 18px;
+    }
+    .form-group {
+        margin-bottom: 18px;
+    }
+    .control-label {
+        display: block;
+    }
+    .in-process {
+        padding-top: 8px;
+    }
+    .progress {
+        width: 50px;
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+}
+
+
+

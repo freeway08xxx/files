@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+
+/* angular-loading-bar SearchSuite Style */
+// Lock View in loading
+
+#loading-bar-spinner {
+	pointer-events: auto;
+	-webkit-pointer-events: auto;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+
+	width: 150%;
+	height: 150%;
+	border: none;
+}
+
+#loading-bar-spinner .spinner-icon {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -($gridbase * 2);
+	margin-top: -($gridbase * 2);
+	padding: ($gridbase * 1.5);
+}

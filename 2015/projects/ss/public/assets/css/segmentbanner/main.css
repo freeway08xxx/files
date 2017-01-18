@@ -1,0 +1,52 @@
+/* segmentbanner */
+.ms-container {
+  background: transparent url("../../img/vendor/switch.png") no-repeat 50% 50%;
+  width: 1200px;
+}
+
+.list-group-item {
+  padding-bottom: 16px;
+}
+
+.file {
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+.dl-area ul {
+  margin-bottom: 0;
+}
+
+.banner-preview {
+  background-color: #f0f0f0;
+}
+.banner-preview .area-wrap {
+  padding-top: 16px;
+}
+.banner-preview .banner-area {
+  float: left;
+  width: 432px;
+}
+.banner-preview .param-area {
+  margin-left: 456px;
+}
+.banner-preview .preview-img {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 16px;
+  background: #fff;
+}
+
+.segmentbanner-description {
+  padding: 8px !important;
+  margin-bottom: 0;
+}
+.segmentbanner-description .desc-list {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.segmentbanner-description .desc-list li {
+  padding-bottom: 4px;
+}

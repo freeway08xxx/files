@@ -1,0 +1,89 @@
+{"works": [
+		{
+			"name":"color magic symphony",
+			"url":"http://app.f.m-cocolog.jp/t/typecast/421372/410143/98626347",
+			"Client":"KONDO KOHEI",
+			"Agency":"ACID GALLERY,KONDO KOHEI",
+			"JOB":"絵描きであるKOHEI氏×ACID GALLERYによるコラボ企画商品のイメージ写真を担当させて頂きました。",
+			"Date":"ACID GALLERY × KONDO KOHEI 2015 S/S",
+			"img":"HIKARU_work1.jpg"
+		},
+		{
+			"name":"短編映画 atmosphere",
+			"url":"http://www.atmosphere-film.com",
+			"Client":"石橋 夕帆  様",
+			"Agency":"Funny Planning,LLC",
+			"JOB":"Web design",
+			"Date":"2016年9月",
+			"img":"jun_work1.jpg"
+		},
+		{
+			"name":"B FLAT BAR ",
+			"url":"http://www.bflatbar.com",
+			"Client":"B FLAT BAR恵比寿",
+			"Agency":"Funny Planning,LLC",
+			"JOB":"Web design",
+			"Date":"2015年7月",
+			"img":"jun_work2.jpg"
+		},
+		{
+			"name":"COROMO",
+			"url":"http://coromoknit.com",
+			"Client":"COROMO",
+			"Agency":"Funny Planning,LLC",
+			"JOB":"Web design",
+			"Date":"2014年1月",
+			"img":"jun_work3.jpg"
+		},
+
+
+
+		{
+			"name":"time",
+			"url":"https://www.youtube.com/watch?v=g6vt6ILSKw8",
+			"Client":"",
+			"Agency":"",
+			"JOB":"監督／脚本／編集",
+			"Date":"2014年9月",
+			"img":"nakagawa_work1.jpg"
+		},
+		{
+			"name":"尊く厳かな死",
+			"url":"https://www.youtube.com/watch?v=27VOqLEHZZk",
+			"Client":"",
+			"Agency":"",
+			"JOB":"監督／脚本／編集",
+			"Date":"2014年9月",
+			"img":"nakagawa_work2.jpg"
+		},
+		{
+			"name":"Drive in Theater 浜松 Drive in Theater 相模湖",
+			"url":"http://www.ditjapan.com",
+			"Client":"DiT Japan",
+			"Agency":"Funny Planning,LLC",
+			"JOB":"運営オペレーションの策定／現場ディレクション",
+			"Date":"2014年10月／2015年4月",
+			"img":"nakagawa_work3.jpg"
+		},
+
+
+		{
+			"name":"雨展",
+			"url":"",
+			"Client":"SUZUCAFE ginza",
+			"Agency":"コンプリートサークル",
+			"JOB":"Graphic Design<br>2人の写真家さんの展示だったため、2人の写真をフライヤーに使い、雨のイラストをのせることで表裏に使うことで統一感と柔らかい印象になるようにしました。",
+			"Date":"2014年11月下旬",
+			"img":"aya_nagai_work1.jpg"
+		},
+		{
+			"name":"SWIMMERS",
+			"url":"",
+			"Client":"Atsushi Saito(映画監督)",
+			"Agency":"コンプリートサークル",
+			"JOB":"Graphic Design<br>表はインパクトを強くするためにあまり情報をのせず、裏はアンバランスながらバランスのとれた配置を心がけ、監督の言葉を見やすくというよりは見てもらえるようあえて白文字にしました。",
+			"Date":"2016年1月",
+			"img":"aya_nagai_work2.jpg"
+		}
+
+]}

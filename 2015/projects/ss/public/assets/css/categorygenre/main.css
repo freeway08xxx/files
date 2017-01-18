@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/**
+ * InitialConstruction CSS
+**/
+
+/**
+ * CategoryGenre form
+ */
+#loading {
+  margin: -68px 0 0 -68px;
+  padding: 20px;
+  background: #EDEDED;
+  border-radius: 15px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+}
+.ms-container{
+  background: transparent url('../../img/vendor/switch.png') no-repeat 50% 50%;
+  width: 1200px;
+}
+.category-title {
+  font-size: 1.25rem;
+  padding: 5px 10px;
+  height: 30px;
+  display: inline-block;
+}
+.back-col {
+  background-color: #EDEDED;
+}
+.back-col-fff {
+  background-color: #fff;
+}
+.form-label {
+  font-size: 100%;
+  margin: 0;
+}
+textarea{
+  font-size: 1em;
+}
+li {
+  margin-right: 5px;
+  margin-right: 10px;
+}
+.table-label td {
+  text-align: center;
+  font-weight: bold;
+}
+
+.table-default {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-left {
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table-type-ex1 {
+  font-size: 100%;
+  vertical-align: middle;
+  width: 250px;
+}
+.table-type-ex2 {
+  vertical-align: middle;
+  width: 350px;
+}
+.form-table {
+  margin: 0;
+  white-space: nowrap;
+}
+.form-table tr th,
+.form-table tr td {
+  font-size: 0.9rem;
+  width: 180px;
+}
+.form-table tr th:first-child,
+.form-table tr td:first-child {
+  font-weight: normal;
+}
+.btn.small {
+  position:relative;
+  bottom: 5px;
+  font-size: 0.8rem;
+}
+.ttip:after {
+  white-space: pre;
+  font-size: 10px;
+}
+p.over-text {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * CategoryGenre dataTable
+ */
+.dataTables_wrapper .dataTables_length {
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: left;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table.dataTable thead th, table.dataTable tfoot th {
+    font-weight: normal;
+    height: 10px;
+}
+
+table.dataTable tr td:first-child {
+    font-weight: normal;
+}
+
+table.dataTable thead tr th {
+  font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+    height: 10px;
+}
+
+table.dataTable tr td, table.dataTable tbody tr td {
+    font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.1em;
+}

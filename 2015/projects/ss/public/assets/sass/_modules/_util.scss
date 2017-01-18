@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+/* util */
+
+.toppadding_8px {
+    padding: 8px 0 0;
+}
+.left_10px {
+    margin-left: 10px;
+}
+.right_10px {
+    margin-right: 10px;
+}
+.right_20px {
+    margin-right: 20px;
+}
+.left_20px {
+    margin-left: 20px;
+}
+.top_10px {
+    margin-top: 10px;
+}
+.top_7px {
+    margin-top: 7px;
+    text-align: left;
+}
+.top_5px {
+    margin-top: 5px;
+}
+.top_20px {
+    margin-top: 20px;
+}
+.top_25px {
+    margin-top: 25px;
+}
+.bottom_10px {
+    margin-bottom: 10px;
+}
+.bottom_20px {
+    margin-bottom: 20px;
+}
+.t_7px_le13px {
+    margin-left: 13px;
+    margin-top: 7px;
+}
+
+.hide {
+    display: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+// ui-bootstrap collapse trigger に指定
+.toggle-collapse {
+    cursor: pointer;
+}
+
+// center-align box (col-**-** と組み合わせて使う)
+.center-box {
+    float: none;
+    margin: auto;
+}
+
+// ngAnimate fade transition
+.transition {
+    opacity: 1;
+}
+.transition.ng-enter,
+.transition.ng-hide-remove {
+    @include transition(all 0.2s ease 0s);
+}
+.transition.ng-leave {
+}
+.transition.ng-enter,
+.transition.ng-hide-remove {
+    opacity: 0;
+}
+.transition.ng-enter-active,
+.transition.ng-hide-remove-active {
+    opacity: 1;
+}
+.transition.ng-leave,
+.transition.ng-hide-add {
+    opacity: 1;
+}
+.transition.ng-leave-active,
+.transition.ng-hide-add-active {
+    opacity: 0;
+}
+
+.em {
+    color: $color_danger;
+}
+
+
+/* */
+.form-inline {
+    display: inline-block;
+    width: auto;
+}

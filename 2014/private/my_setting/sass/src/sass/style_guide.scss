@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*
+# タブ
+
+タブは`.headLine`をベースとする。
+
+背景あり白文字は`.hl1`・背景なし色文字は`.hl2`
+
+```
+<div class="headLine hl1">
+  <p>見出し!</p>
+</div>
+<div class="headLine hl2">
+  <p>見出し</p>
+</div>
+```
+*/
+
+.headLine {
+  padding:
+  5px 0;
+  width:
+  100%;
+}
+
+.headLine p {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.hl1 {
+  background-color: #FE8528;
+}
+
+.hl2 {
+  margin-bottom: 0;
+}
+
+.hl1 p,.hl3 p {
+  padding: 0 0 0 10px;color: #FFFFFF;
+}
+
+.hl2 p {
+  color: #FF9900;padding: 5px 0;
+}

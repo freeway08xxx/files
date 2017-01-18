@@ -1,0 +1,27 @@
+{
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai2.tmTheme",
+	"default_encoding": "UTF-8",
+	"default_line_ending": "system",
+	"draw_white_space": "all",
+	"fallback_encoding": "UTF-8",
+	"font_face": "Consolas",
+	"font_size": 12,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"match_brackets_angle": true,
+	"match_selection": true,
+	"match_tags": true,
+	"remember_open_files": true,
+	"show_encoding": true,
+	"show_full_path": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"word_wrap": false,
+// 全角スペースのハイライトをするかどうか
+"fullwhitespace_viewable" : true
+}

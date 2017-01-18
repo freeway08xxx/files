@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+// Query Targeting
+
+// override
+.content {
+    padding-top: ($gridbase * 2);
+}
+
+
+.category-name {
+	margin-bottom: $gridbase * 3;
+	width: 50%;
+}
+.keyword-input {
+	margin-bottom: $gridbase * 2;
+	min-height: 100px;
+}
+.keyword-btn-area {
+	border: none;
+}
+
+// update
+
+.keyword-list {
+	@include line-top(.12);
+	margin-top: $gridbase * 5;
+	padding-top: $gridbase * 3;
+}
+.keyword-table {
+	margin-top: $gridbase * 3;
+}
+
+
+.alert_message {
+    width:350px;
+}

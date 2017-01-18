@@ -1,0 +1,181 @@
+@charset "UTF-8";
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.tab-title {
+  margin-top: 5px;
+}
+
+/**
+ * 一覧検索フォーム 
+ */
+.hover-pointer:hover {
+  cursor: pointer;
+}
+
+/**
+ * 資料一覧
+ */
+.category {
+  margin-top: 16px;
+  background-color: #eee;
+}
+.category .panel-body {
+  padding-bottom: 0;
+}
+.category .title {
+  margin: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+.category .row {
+  position: relative;
+}
+.category .arrow {
+  position: relative;
+  top: -110px;
+  left: 103%;
+}
+
+.category-col {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: rgba(0, 0, 0, 0.03) -1px 1px 2px inset, rgba(255, 255, 255, 0.8) -1px 1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.03) -1px 1px 2px inset, rgba(255, 255, 255, 0.8) -1px 1px 0;
+  box-shadow: rgba(0, 0, 0, 0.03) -1px 1px 2px inset, rgba(255, 255, 255, 0.8) -1px 1px 0;
+  overflow: auto;
+  margin-bottom: 0;
+  height: 201px;
+  background-color: #e6e6e6;
+}
+
+.file-list-table th {
+  font-size: 1.2rem;
+}
+.file-list-table td {
+  font-size: 1.1rem;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  max-width: 100px;
+}
+.file-list-table td.icon {
+  cursor: pointer;
+}
+.file-list-table td.id {
+  text-align: right;
+  white-space: nowrap;
+}
+.file-list-table td.title {
+  color: #123456;
+}
+.file-list-table td.entry-user-name {
+  text-align: center;
+  white-space: nowrap;
+}
+.file-list-table td.download-count {
+  text-align: right;
+}
+.file-list-table td.file-update-date {
+  text-align: center;
+  white-space: nowrap;
+}
+.file-list-table td.update-datetime {
+  font-size: 0.85rem;
+  text-align: right;
+}
+.file-list-table td.insert-datetime {
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+/**
+ * 資料詳細
+ */
+.detail .file-title-block {
+  margin-bottom: 16px;
+}
+.detail .file-title-block .title {
+  margin-top: 8px;
+}
+.detail .description-block .description > .panel-heading {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+}
+.detail .detail-info-table {
+  font-size: 1.2rem;
+}
+.detail .detail-info-table th {
+  width: 18%;
+  padding: 5px 8px;
+  background-color: #f0f0f0;
+}
+.detail .detail-info-table td {
+  padding: 5px 8px;
+}
+.detail .detail-info-table .category-info .breadcrumb {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.detail .comment-block .title, .detail .history-block .update-history .title, .detail .history-block .download-history .title {
+  font-weight: bold;
+}
+.detail .comment-block {
+  margin-top: 40px;
+}
+.detail .comment-block .comment-item {
+  position: relative;
+  min-height: 60px;
+  border-color: #75CC50;
+}
+.detail .comment-block .icon-col {
+  float: left;
+  width: 30px;
+}
+.detail .comment-block .comment-col {
+  margin-left: 46px;
+  margin-right: 108px;
+}
+.detail .comment-block .info-col {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  text-align: right;
+  width: 100px;
+  font-size: 1.1rem;
+}
+.detail .comment-block .info-col p {
+  margin-bottom: 4px;
+}
+.detail .comment-block .comment-edit .title {
+  margin-top: 4px;
+}
+.detail .comment-block .comment-edit textarea {
+  min-height: 80px;
+  background-color: #fafafa;
+}
+.detail .comment-block .comment-edit .btn-submit {
+  margin-top: 8px;
+}
+.detail .history-block {
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+.detail .history-block .table {
+  margin-bottom: 0;
+}
+.detail .history-block .table th {
+  padding: 5px 8px;
+  background-color: #f0f0f0;
+}
+.detail .history-block .table td {
+  padding: 5px 8px;
+}
+.detail .history-block .scroll-wrap {
+  max-height: 200px;
+  overflow-y: auto;
+}

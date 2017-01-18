@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/* 共通 */
+body, table { font-family: Arial, "メイリオ", "ＭＳ Ｐゴシック", sans-serif; }
+
+.clear {
+    clear: both;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.bold {
+    font-weight: bold;
+}
+.t_margin20 {
+    margin-top: 20px;
+}
+#header {
+    margin: 20px;
+}
+#header p.attention {
+    color: #ff0000;
+    text-align: center;
+    font-size: large;
+    width: 900px;
+    float: left;
+    margin: 3em 0 0 20px;
+}
+#sidemenu_front {
+    text-align: center;
+}
+.box_cat_rsb {
+    border-style: solid;
+    border-color: #a7a7a7;
+    border-width: 1px 1px 0 1px;
+}
+.sidemenu_cat span.category_faq {
+    font-weight: bold;
+    padding: 4px 0 4px 10px;
+    display: block;
+    background: -moz-linear-gradient(top, #B2FFB2, #52EC63);
+    background: -webkit-gradient(linear, left top, left bottom, from(#B2FFB2), to(#52EC63));
+    color:#444;
+}
+.sidemenu_cat span.category_faq:hover {
+    text-decoration: underline;
+    background: -moz-linear-gradient(top, #cfec86, #52EC63);
+    background: -webkit-gradient(linear, left top, left bottom, from(#cfec86), to(#52EC63));
+}
+.sidemenu_serv {
+     background-color: #FFF;
+     border-top: 1px solid #CCC;
+     border-bottom: 1px solid #CCC;
+     padding: 2px 0;
+ }
+.sidemenu_serv:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #FFFCBB;
+}
+#sidemenu_end p a {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: #0a7092;
+}
+#sidemenu_end p a:hover {
+    text-decoration: none;
+    font-size: 14px;
+    color: #EB3152;
+}
+
+/* FAQ一覧画面 */
+#main_title {
+    font-size: 23px;
+    font-weight: bolder;
+    color: #0d6919;
+    margin: 0.5em 0 1em;
+}
+tr.t_head th span {
+    margin: 0px 10px;
+}
+th span.category {
+    color: #0d6919;
+    font-size: 18px;
+}
+th span.sort, th span.sort a {
+    color: #000080;
+    text-decoration: underline;
+}
+tr.question_row td.question:hover {
+    cursor: pointer;
+    background-color: #FFFCBB;
+}
+table.qa {
+    border: 1px solid #DDD;
+	width: 100%;
+    border-collapse: collapse;
+    border-spacing:0;
+}
+table tr td {
+	border: 1px solid #DDD;
+	word-break: break-all;
+}
+table.qa th {
+    border: 1px solid #DDD;
+    font-size: 15px;
+    padding: 10px;
+    background: -moz-linear-gradient(top, #B2FFB2, #52EC63);
+    background: -webkit-gradient(linear, left top, left bottom, from(#B2FFB2), to(#52EC63));
+}
+th.qa_id {
+    text-align: center;
+    width: 40px;
+}
+p.q_category {
+    color: #006400;
+    font-weight: bold;
+    margin: 5px 0
+}
+p.q_title {
+    font-weight: bold;
+    font-size: 14px;
+    color: navy;
+    margin: 3px 0;
+    }
+p.q_message {
+    text-decoration: none;
+    cursor: none;
+}
+
+/* FAQ詳細画面 */
+div#faq {
+    width: 80%;
+}
+div#faq p {
+    margin-bottom: 1em;
+}
+div.question {
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 15px;
+}
+span.menu {
+    font-size: larger;
+    color: green;
+}
+.edit_btn {
+    float: right;
+    margin: 1em;
+}
+.edit_btn p.close {
+    margin: 1em;
+}
+div.answer {
+    border-bottom: solid 1px #CCC;
+}
+div.question p, div.answer p {
+    margin: 1em;
+}
+p.a_info {
+    text-align: right;
+    color: green;
+}
+p.q_info {
+    text-align: right;
+    color: green;
+}
+p.category {
+    color: #656565;
+    font-size: large;
+    font-weight:bold;
+}
+p.category span.link {
+    color: #656565;
+}
+p.category span.link a {
+    text-decoration: underline;
+}
+
+
+
+

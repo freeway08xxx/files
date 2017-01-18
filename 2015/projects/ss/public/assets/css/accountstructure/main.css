@@ -1,0 +1,15 @@
+/**
+ * InitialConstruction CSS
+**/
+
+/*アコーディオンのタイトル文字のフォントサイズ*/
+.panel-title {
+	font-size: 10px;
+}
+
+/*画面表示文言の警告文スタイル*/
+h5 .output-warning {
+	font-size: 10px;
+	color: #ff0000;
+	margin-left:10px;
+}

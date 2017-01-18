@@ -1,0 +1,19 @@
+[
+ {
+    "keys": ["ctrl+alt+."], "command": "goto_css_declaration",
+    "args": {"goto": "next"}
+ },
+ {
+    "keys": ["ctrl+alt+,"],  "command": "goto_css_declaration",
+    "args": {"goto": "prev"}
+ },
+ {
+        "keys": ["ctrl+s"], "command": "browser_refresh", "args": {
+        "auto_save": true,
+        "delay": 2.5,
+        "activate_browser": false,
+        "browser_name" : "Google Chrome"
+    	}
+    }
+
+]

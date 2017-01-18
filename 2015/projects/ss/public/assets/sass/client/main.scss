@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+@import "_partials/text";
+
+// layout mod
+.client-setting {
+
+	// Common ClientCombo PositionMod
+	.client-combobox-wrap {
+		margin-top: -59px;
+		.list-group-item {
+			padding: 0;
+			border: none!important;
+			background: none!important;
+		}
+	}
+	// Common ClientCombo ViewMod
+	.common-client-combobox {
+		.ss-client-combobox-account {
+			display: none;
+		}
+	}
+	// for Alert Msg Close Icon
+	.close-icon {
+		padding: 0;
+	}
+}
+
+
+// Menu Layout
+.client-setting {
+	// common
+	.clientmenu {
+		.heading {
+			margin-bottom: ($gridbase * 5);
+		}
+	}
+	.side-menu {
+		li {
+			margin-bottom: ($gridbase / 2);
+			a {
+				@include border-radius($gridbase / 2);
+				display: block;
+				padding: $gridbase;
+				cursor: pointer;
+				&:hover,
+				&.active {
+					background: $color_sub;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.btn-area {
+		margin-top: ($gridbase * 3);
+	}
+	.msg-area {
+		margin-top: ($gridbase * 3);
+	}
+
+	// cv
+	.conversion {
+		.empty-client {
+			margin-top: ($gridbase * 4);
+		}
+
+	}
+
+	// media_cost
+	.mediacost {
+
+		.no-registerd {
+			@include semi-border-box(.3);
+			padding: $gridbase * 2;
+			margin-bottom: ($gridbase * 5);
+		}
+
+		.attention {
+			margin-top: ($gridbase * 6);
+		}
+
+
+		// form
+		.add-mediacost {
+			.target-type,
+			.target-media {
+				.control-label {
+					display: inline-block;
+					margin-bottom: 0;
+					width: 9rem;
+				}
+				.form-control {
+					display: inline-block;
+					margin-left: $gridbase;
+					max-width: 140px;
+				}
+			}
+			.media-cost-input {
+				max-width: 120px;
+			}
+			// client combobox 2nd
+			.account-list {
+				.ss-client-combobox-client {
+					display: none;
+				}
+				.ss-client-combobox-account {
+					margin-top: ($gridbase / 2);
+				}
+			}
+		}
+
+		// table
+		.set-list {
+			.table {
+				th, td {
+					vertical-align: middle;
+					padding: ($gridbase);
+				}
+				th {
+					&.delete-check {
+						text-align: center;
+						white-space: nowrap;
+					}
+				}
+				td {
+					&.delete-check {
+						text-align: center;
+						white-space: nowrap;
+						label {
+							display: block;
+
+						}
+					}
+				}
+				.media-name {
+					width: 50%;
+				}
+				.datetime {
+					font-size: 1.2rem;
+				}
+			}
+			.btn-area {
+				padding: $gridbase * 1.5;
+				margin: 0;
+				background-color: $color_lightgray;
+			}
+		}
+		.media-list {
+			margin-bottom: $gridbase * 5;
+		}
+		.media-cost-input-group {
+			width: 100px;
+		}
+
+	}
+}

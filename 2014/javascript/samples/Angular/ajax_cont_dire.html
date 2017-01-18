@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body ng-app="applicationName"> 
+
+    
+<div>
+    <div>
+        <button hello='world'>hello</button>
+    </div>
+</div>
+
+
+<!-- controller -->
+<div ng-controller="getJsonController">
+      <div ng-repeat="data in scopeName">
+                <a href="{{data.url}}" class="clearfix" style="height:{{setheight}}">
+                    <img ng-src="{{data.icon}}" alt=""/>
+                    <p class="ttl">{{data.name}}</p>
+                    <p>{{data.text}}</p>
+                </a>
+      </div>
+</div>
+
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+<script>
+
+var someNameSpace = angular.module('applicationName', []);
+
+someNameSpace.controller('getJsonController', function ($scope,$http){
+        
+        var jsonURL = './mlist.json';
+
+        $http({method: 'GET', url: jsonURL})
+        .success(function (data) {
+
+            $scope.scopeName = data.response.list;
+        
+
+        }).error(function(data) {
+            alert('ajax error')
+        })
+
+})
+
+
+someNameSpace.directive("hello", function(){
+    return function(scope, element,attr){
+        element[0].addEventListener("click", function(){
+            alert("hello, "+ attr["hello"]);
+        });
+    };
+});                   
+              
+
+
+  </script>
+</body>
+</html>
+
+
+

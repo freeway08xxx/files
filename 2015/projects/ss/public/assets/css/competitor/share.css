@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/**
+ * 自動実行設定
+ */
+.edit-schedule .child {
+  display: none;
+}
+.edit-schedule .list-group-item {
+  padding-bottom: 16px;
+}
+.edit-schedule .crawl_setting_area .list-inline li {
+  margin-right: 16px;
+}
+.edit-schedule .crawl_setting_area .media-label {
+  display: inline-block;
+  margin-right: -8px;
+  min-width: 80px;
+}
+.edit-schedule .crawl_setting_area div.checkbox {
+  margin: 0;
+}
+
+/**
+ * キーワード紐付設定
+ */
+.edit-keyword .register {
+  padding: 16px;
+}
+.edit-keyword .register .form-label {
+  width: 15rem;
+  font-weight: bold;
+}
+.edit-keyword .register .btn-area {
+  margin-top: 8px;
+}
+.edit-keyword .keyword-input {
+  min-height: 60px;
+}
+.edit-keyword div.checkbox {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding-left: 20px;
+  margin: 4px 0;
+  border: 1px solid #ddd;
+}
+.edit-keyword div.checkbox label {
+  display: block;
+  padding: 8px;
+}
+
+/**
+ * クライアント設定
+ */
+.edit-client .register {
+  padding: 4px;
+  vertical-align: middle;
+}
+.edit-client .register .btn-insert {
+  float: right;
+  margin: 4px 4px 0 0;
+}
+.edit-client .input-sort-num {
+  width: 48px;
+}
+.edit-client .input-client-name {
+  width: 50%;
+}
+.edit-client .name {
+  white-space: nowrap;
+}
+.edit-client div.name {
+  display: inline-block;
+  padding-left: 15px;
+}
+.edit-client .edit_current {
+  background-color: #FAF6BD;
+}
+.edit-client .keyword-btn {
+  margin-left: 15px;
+}
+.edit-client .client-row {
+  padding: 5px 3px;
+  margin-bottom: 8px;
+}
+.edit-client .client-row .controls {
+  float: right;
+  min-width: 210px;
+  vertical-align: middle;
+}
+.edit-client .popup-base {
+  margin-top: 15px;
+}
+
+/**
+ * アクセスユーザー
+ */
+.edit-user .register .user-name {
+  width: 70%;
+}
+.edit-user .register .btn {
+  margin-top: 4px;
+}
+.edit-user .user-base {
+  margin-top: 15px;
+}
+.edit-user .user-base .user-table-wrap {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.edit-user .user-base .user-table-wrap .table {
+  margin-bottom: 0;
+}
+.edit-user .user-base .user-table-wrap .mail-address {
+  white-space: nowrap;
+}
+.edit-user .user-base .user-table-wrap .controls {
+  text-align: right;
+}
+
+/**
+ * レポート
+ */
+.report .edit_base {
+  text-align: center;
+}
+.report .edit_tablebase {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  width: 1600px;
+}
+.report .edit_table {
+  float: left;
+  width: 500px;
+}
+.report .edit_classtable {
+  float: left;
+  width: 600px;
+}
+.report .edit_cassette {
+  margin: 2px 3px 2px 3px;
+  border: 1px solid #000;
+  position: relative;
+  min-height: 40px;
+  height: 40px;
+}
+.report .edit_current {
+  margin: 2px 3px 2px 3px;
+  border: 2px solid #000;
+  position: relative;
+  min-height: 40px;
+  height: 40px;
+  background-color: #FAF6BD;
+}
+.report .edit_delbtn {
+  position: absolute;
+  left: 2px;
+  bottom: 10px;
+}
+.report .edit_topshow {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+}
+.report .edit_show {
+  position: absolute;
+  left: 35px;
+  bottom: 8px;
+}
+.report .edit_rightbtn {
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+}
+.report .edit_classlabel {
+  float: left;
+  width: 60px;
+}
+.report .edit_classlabel img {
+  margin-top: 150px;
+}
+.report .edit_float_clear {
+  clear: both;
+}
+.report .report_full_font {
+  font-size: 100%;
+}
+.report .toggle-text {
+  padding-bottom: 16px;
+  font-size: 1.2rem;
+}
+.report .top-control-area {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+  margin-top: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.report .detail-table {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+}
+.report .detail-table td {
+  white-space: nowrap;
+}

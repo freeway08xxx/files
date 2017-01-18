@@ -1,0 +1,46 @@
+.ms-container{
+	background: transparent url('../../img/vendor/switch.png') no-repeat 50% 50%;
+	width: 1200px;
+}
+.search-input{
+	width: 540px;
+}
+
+.alert.danger{
+	font-size:16px;
+}
+
+.eagle-title {
+	font-size: 1.25rem;
+	padding: 5px 10px;
+	height: 30px;
+	display: inline-block;
+}
+
+.table-label td {
+	text-align: center;
+	font-weight: bold;
+}
+
+.float {
+	margin-left: 10px;
+	float: left;
+}
+
+input.text-size {
+  width: 200px;
+}
+
+#adgroup_search{
+	display: none;
+}
+#keyword_search{
+	display: none;
+}
+#ad_search{
+	display: none;
+}
+
+.eagle-description {
+	background-color: #FFFF99;
+}

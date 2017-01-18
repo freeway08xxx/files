@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+.ss-graph {
+	padding: ($gridbase * 2) 0;
+}
+

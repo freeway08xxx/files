@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+/**
+ * legacy
+ * 旧Gumby ViewItems を BootStrapで体裁つける用
+ */
+ .legacy {
+	&.content {
+		padding-top: ($gridbase * 3);
+	}
+
+	legend {
+		font-size: 1.5rem;
+		border: none;
+	}
+
+	// クライアント、アカウント選択
+	.select-client {
+		@include line-bottom(.12);
+		padding: ($gridbase * 3) 0;
+		margin-bottom: ($gridbase * 3);
+		& > fieldset {
+			& > legend {
+				font-size: 1.5rem;
+				margin-bottom: $gridbase;
+				border: none;
+			}
+		}
+	}
+
+	// アカウント選択
+	.select-account {
+		fieldset {
+			legend {
+				font-size: 1.5rem;
+				border: none;
+			}
+			select {
+
+			}
+			.search-input {
+				margin-left: ($gridbase / 2);
+				height: ($gridbase * 3);
+				display: inline-block;
+				width: auto;
+			}
+		}
+		.account-select-box {
+			@include border-radius(($gridbase / 2));
+			padding: 16px;
+			margin-bottom: ($gridbase * 2);
+			border: 1px solid $color_border;
+			#ms-account_id_list {
+				margin-bottom: ($gridbase* 2);
+				padding: 0;
+				width: 100%;
+				border: none;
+			}
+		}
+
+		// アカウント選択 シンプル版
+		#ms-account_id_list {
+			div.ms-selectable {
+				width: 47%;
+				ul {
+					li.ms-elem-selectable {
+						font-size: 1.3rem;
+					}
+				}
+			}
+			div.ms-selection {
+				width: 47%;
+			}
+			.ms-list {
+				margin-top: $gridbase;
+			}
+		}
+
+		// 検索インプット付き
+		%search-height {
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+		}
+		&.with-search {
+			.account-select-box {
+				margin-bottom: $gridbase;
+			}
+			.account-search {
+				height: 74px;
+				.area-title {
+					@extend %search-height;
+					margin-right: $gridbase + ($gridbase / 2);
+				}
+				.search-option-area {
+					@extend %search-height;
+					margin-right: $gridbase;
+					font-size: 1.2rem;
+					label {
+						padding-right: ($gridbase / 2);
+					}
+				}
+				.search-input-area {
+					@extend %search-height;
+					margin-right: $gridbase;
+					textarea {
+						height: 100%;
+						font-size: 1.2rem;
+					}
+					button {
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+
+
+	div.dataTables_wrapper {
+		table.dataTable {
+			thead {
+				th, td {
+					white-space: nowrap;
+					background-color: $color_darkgray !important;
+				}
+			}
+		}
+
+		.dataTables_filter {
+			position: relative;
+			margin: 4px 8px 2px 10px;
+			float: left;
+		}
+
+	}
+
+ }

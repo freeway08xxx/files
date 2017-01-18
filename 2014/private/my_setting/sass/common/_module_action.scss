@@ -1,0 +1,422 @@
+@charset "utf-8";
+// ----------------------------------------------------
+//  アコーディオン
+// ----------------------------------------------------
+/*
+
+# アコーディオン<!-- accordion -->
+
+###### 表示切り替え
+###### 1.t-arrow-up(上矢印)　t-arrow-down(下矢印)
+###### 2.ddタグ　style="display:none"　style="display:block"
+
+#### リスト
+
+    <!-- accordion -->
+    <div class="t-accordion">sprite
+      <dl class="t-accordion">
+        <dt class="t-accordion__title t-arrow_up js-t-accordion">
+          アコーディオン
+        </dt>
+        <dd class="t-accordion__items" style="display:block">
+          <div class="t-accordion__item">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </dd>
+      </dl>
+      <dl class="t-accordion">
+        <dt class="t-accordion__title t-arrow_up js-t-accordion">
+          アコーディオン
+        </dt>
+        <dd class="t-accordion__items" style="display:block">
+          <ul class="t-accordion__list">
+            <li><a href="#">テキスト</a></li>
+            <li><a href="#">テキスト</a></li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <!-- /accordion -->
+
+*/
+
+/*
+
+#### サムネイル画像横テキスト
+
+    <!-- accordion -->
+    <div class="t-accordion">
+      <dl>
+        <dt class="t-arrow_up js-t-accordion">
+          <ul class="t-media">
+            <li>
+              <div class="t-media__inner-arrow">
+                <div class="t-media__img t-media__img-60">
+                  <img>
+                </div>
+                <div class="t-media__body">
+                  <p class="t-media__body-title">Mobage（モバゲー）</p>
+                  <p class="t-media__body-text">
+                    新タイトル続々追加中！CMで話題の超高品質ゲームで遊ぼう
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </dt>
+        <dd class="t-accordion__items" style="display:block">
+          <div class="t-accordion__list">
+            <!-- list-->
+            <ul class="t-media">
+              <li>
+                <a class="" href="" >
+                  <div class="t-media__inner-arrow">
+                    <div class="t-media__img t-media__img-50">
+                      <img>
+                    </div>
+                    <div class="t-media__body">
+                      <p class="t-media__body-title">Mobage（モバゲー）</p>
+                      <p class="t-media__body-text">
+                        新タイトル続々追加中！CMで話題の超高品質ゲームで遊ぼう
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="" href="" >
+                  <div class="t-media__inner-arrow">
+                    <div class="t-media__img t-media__img-50">
+                      <img>
+                    </div>
+                    <div class="t-media__body">
+                      <p class="t-media__body-title">Mobage（モバゲー）</p>
+                      <p class="t-media__body-text">
+                        新タイトル続々追加中！CMで話題の超高品質ゲームで遊ぼう
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <!-- /list -->
+          </div>
+        </dd>
+      </dl>
+
+    </div>
+    <!-- /accordion -->
+
+*/
+
+
+.t-accordion__title{
+  padding: 8px 10px;
+  border-bottom: 1px solid $boder_color_lightgrey;
+  @include font-size(16);
+}
+.t-accordion__items{
+  line-height: 1.3;
+  border-bottom: 1px solid $boder_color_lightgrey;
+  @include font-size(16);
+}
+.t-accordion__item{
+  padding: 10px;
+  @include font-size(14);
+}
+.t-accordion__list{
+  padding: 0 10px;
+  li{
+    position: relative;
+    @include font-size(14);
+    line-height: 1.3;
+    border-bottom: 1px solid $boder_color_lightgrey;
+	  &:after{
+	    @extend %arrow_gray;
+	    right: 0;
+	  }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  //サムネイル横画以外のリストで使用
+  >li{
+    padding: 5px 0 5px 10px;
+  }
+  //サムネイル横画の場合
+  .t-media{
+    border:none;
+  }
+}
+
+
+
+// ----------------------------------------------------
+// タブ
+// ----------------------------------------------------
+
+/*
+
+# タブ<!-- tab -->
+
+    <!-- tab -->
+    <div class="t-tab">
+      <ul class="t-tab__navs js-t-tab__navs">
+        <li class="t-tab__nav t-tab__menu--active">タブ1</li>
+        <li class="t-tab__nav">タブ2</li>
+        <li class="t-tab__nav">タブ3</li>
+      </ul>
+
+      <ul class="t-tab__items js-t-tab__items">
+        <li class="t-tab__item" style="display:block">タブ1コンテンツコンテンツコンテンツコンテンツ</li>
+        <li class="t-tab__item">タブ2コンテンツコンテンツコンテンツコンテンツ</li>
+        <li class="t-tab__item">タブ3コンテンツコンテンツコンテンツコンテンツ</li>
+      </ul>
+    </div>
+    <!-- /tab -->
+
+*/
+
+.t-tab{
+	padding:10px;
+	text-align:center;
+}
+.t-tab__navs{
+	display:table;
+	width:100%;
+  @include border-radius($border-radius);
+	height:30px;
+	border:1px solid #a4a4a4;
+	text-align:center;
+	vertical-align:middle;
+  li{
+    display:table-cell;
+    vertical-align:middle;
+    padding:0 5px;
+    border-right:1px solid #a4a4a4;
+    &:first-child{
+      border-radius:3px 0 0 3px;
+    }
+    &:last-child{
+      border-radius: 0 3px 3px 0;
+      border-right:none;
+    }
+  }
+}
+.t-tab__items{
+  li{
+    display: none;
+  }
+}
+// アクティブの場合
+.t-tab__menu--active{
+  background:#9a9a9a;
+  color:#fff;
+  @include box-shadow(1px 2px 1px rgba(0,0,0,0.4) inset, -1px 0 1px rgba(0,0,0,0.4) inset);
+ 
+}
+
+// ----------------------------------------------------
+// ドロップダウン
+// ----------------------------------------------------
+
+/*
+# ドロップダウン<!-- dropdown -->
+
+閉じている場合
+
+    <!-- dropdown -->
+    <div class="t-dropdown">
+      <button class="t-dropdown__button t-arrow_down js-t-dropdown">メニュー</button>
+      <ul class="t-dropdown__menu" style="display:none">
+        <li>テキストテキストです</li>
+        <li>テキストテキストです</li>
+        <li><a href="#">リンクリンクです</a></li>
+        <li><a href="#">リンクリンクです</a></li>
+      </ul>
+    </div>
+    <!-- /dropdown -->
+
+*/
+
+/*
+
+開いた場合
+
+    <!-- dropdown -->
+    <div class="t-dropdown">
+      <button class="t-dropdown__button t-arrow_up js-t-dropdown">メニュー</button>
+      <ul class="t-dropdown__menu" style="display:block">
+        <li>テキストテキストです</li>
+        <li>テキストテキストです</li>
+        <li><a href="#">リンクリンクです</a></li>
+        <li><a href="#">リンクリンクです</a></li>
+      </ul>
+    </div>
+    <!-- /dropdown -->
+
+*/
+
+.t-dropdown{
+  position: relative;
+}
+.t-dropdown__button{
+  @extend .t-button__base;
+  @include font-size(11);
+  padding:0 30px 0 10px;
+  height: 30px;
+  min-width: 100px;
+}
+.t-dropdown__menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  padding: 5px 10px;
+  margin-top: 2px;
+  background: #fff;
+  border: 1px solid $boder_color_gray;
+  line-height:2;
+  @include border-radius($border-radius);
+  @include box-shadow(rgba(0, 0, 0, 0.2) 0 1px 1px);
+  a{
+    display: block;
+  }
+}
+
+
+
+
+// ----------------------------------------------------
+// モーダル
+// ----------------------------------------------------
+/*
+
+/*
+# モーダル <!-- modal -->
+
+画像ありボタン２つ
+
+###### ※使用する場合は、
+
+    <div class="t-modal js-t-modal" style="display:block">
+        <div class="t-modal__overlay js-t-modal__overlay"></div>
+
+        <div class="t-modal__content js-t-modal__content" style="top: 10px;left: 20%">
+          <div class="t-modal__cross js-t-cancell">
+            <i class="t-sprite-icon t-sprite-icon-icon10"></i>
+          </div>
+          <div class="t-modal__inner">  
+            <div class="t-media__img t-media__img-50">
+              <img>
+            </div>
+            <div class="t-media__body">
+              <p class="t-media__body-title">Mobage（モバゲー）</p>
+              <p class="t-media__body-text">
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </div>
+          </div>
+          <div class="t-modal__button">
+            <ul class="t-button__group">
+              <li><a href="" class="t-modal__button-half">ボタン</a></li>
+              <li><a href="" class="t-modal__button-half">ボタン</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+
+*/
+
+
+/*
+
+画像なしボタン１つ
+
+      <div class="t-modal js-t-modal" style="display:block">
+        <div class="t-modal__overlay js-t-modal__overlay"></div>
+
+        <div class="t-modal__content js-t-modal__content" style="top: 10px;left: 20%">
+          <div class="t-modal__cross js-t-cancell">
+            <i class="t-sprite-icon t-sprite-icon-icon10"></i>
+          </div>
+          <div class="t-modal__inner">  
+            <div class="t-media__body">
+              <p class="t-media__body-title">Mobage（モバゲー）</p>
+              <p class="t-media__body-text">
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </div>
+          </div>
+          <div class="t-modal__button">
+            <a href="" class="t-modal__button-all">ボタン</a>
+          </div>
+        </div>
+      </div>  
+
+*/
+
+.t-modal{
+  display: none;
+}
+.t-modal__overlay{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  background:rgba(0,0,0,0.6);
+  z-index:100;
+  overflow:visible;
+  cursor:pointer;
+}
+.t-modal__content{
+  position:absolute;
+  left:50%;
+  top:50%;
+	width: 280px;
+  height: auto;
+  background: #fff;
+  padding: 8px 10px 10px 10px;
+	@include border-radius(4px);
+  z-index:101;
+}
+.t-modal__inner{
+  @include clearfix; 
+}
+//x
+.t-modal__cross{
+  text-align: right;
+  width: 100%;
+  height: 30px;
+
+}
+.t-modal__button{
+	margin-top: 10px;
+  width: 100%;
+  @include display-box;
+}
+.t-modal__button-all{
+  @extend .t-button__base;
+  @include font-size(12);   
+  width: 100%;
+  height: 30px;
+	@extend .t-arrow_right;
+}
+.t-modal__button-half{
+  @extend .t-button__base;
+  @include font-size(12);   
+  width: 132px;
+  height: 30px;
+	@extend .t-arrow_right;
+}
+
+
+
+
+
+
+
+
+
+

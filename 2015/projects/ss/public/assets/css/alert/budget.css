@@ -1,0 +1,47 @@
+.filter .list-inline {
+  margin-bottom: 0;
+}
+.filter .h6 {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: rgba(255, 255, 255, 0.3) -1px 0 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.3) -1px 0 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.3) -1px 0 0 inset;
+  padding-right: 8px;
+  margin-right: 8px;
+}
+
+h5.label {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.budget-search {
+  margin-bottom: 0;
+}
+
+.alert-list {
+  margin-bottom: 24px;
+}
+
+.report-table {
+  margin-top: 16px;
+}
+.report-table > tbody > tr > td {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+.report-table > tbody > tr > td.media-budget {
+  text-align: right;
+  border-right: none !important;
+}
+.report-table > tbody > tr > td.media-budget-btn {
+  border-left: none !important;
+}
+.report-table > tbody > tr > td.mod-budget {
+  width: 180px;
+}
+
+table.media-budget-table tr th {
+  font-size: 1.3rem;
+  vertical-align: middle !important;
+}

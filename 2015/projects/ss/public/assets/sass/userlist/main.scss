@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+/* get*/
+.dataTables_wrapper .dataTables_length {
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: left;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.frame {
+    margin-top: $gridbase * 3;
+}
+
+table.dataTable thead th, table.dataTable tfoot th {
+    font-weight: normal;
+    height: 10px;
+}
+
+table tr td:first-child {
+    font-weight: normal;
+}
+
+table thead tr th {
+  font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+    height: 10px;
+}
+
+table tr td, table tbody tr td {
+    font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.1em;
+}
+
+.user_list_table {
+    text-align: center;
+    vertical-align: center;
+}
+
+.dl-format {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.userlist_ydn_rule hide {
+    visibility: hidden;
+}
+
+/* edit */
+.list-upload {
+    padding: ($gridbase * 3) 0 0 0;
+    margin-bottom: ($gridbase * 3);
+    & > fieldset {
+        float: left;
+        width: 50%;
+        & > legend {
+            font-size: 1.5rem;
+            margin-bottom: $gridbase;
+            border: none;
+        }
+        .form-input {
+            padding: $gridbase;
+            background: $color_lightgray;
+        }
+    }
+    .well {
+        margin-bottom: 0;
+    }
+}
+.btn-area {
+    margin-bottom: $gridbase * 4;
+}
+
+
+input[type="file"] {
+    width: 300px;
+}
+
+.alert {
+    margin-top:10px;
+}
+
+#file_upload {
+    margin-top:10px;
+}
+
+table.display {
+  margin: 0 auto;
+  width: 100%;
+  table-layout: fixed;
+  word-wrap:break-word;
+}
+
+.userlist_ydn_rule hide {
+    visibility: hidden;
+}
+
+.userlist_table_rule hide {
+    visibility: hidden;
+}
+
+.userlist_table_combination hide {
+    visibility: hidden;
+}

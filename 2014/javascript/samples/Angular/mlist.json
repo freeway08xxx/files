@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "response": {
+    "total": 3,
+    "list": [
+      {
+        "icon": "http://cdn-img.auone.jp/menulist/thumbnail/ios/org/iP01664.png",
+        "url": "http://menulist.auone.jp/r?site_no=iP01664&site_url=http://clara.augury.jp/au",
+        "name": "恋愛セラピスト南クララ",
+        "text": "恋愛の母・恋愛セラピストとして話題の占い師「南クララ」"
+      },
+      {
+        "icon": "http://cdn-img.auone.jp/menulist/thumbnail/ios/org/iP01663.jpg",
+        "url": "http://menulist.auone.jp/r?site_no=iP01663&site_url=http://sp.hazuki-koi.net/?m=ezmenu",
+        "name": "はづき虹映　恋に効く男と女の占い",
+        "text": "著書累計１５０万部のベストセラー作家が贈る、男と女の占い"
+      },
+      {
+        "icon": "http://cdn-img.auone.jp/menulist/thumbnail/ios/org/iP01665.png",
+        "url": "http://menulist.auone.jp/r?site_no=iP01665&site_url=http://sp.sakurako-fc.com/",
+        "name": "大原櫻子FANCLUB",
+        "text": "大原櫻子のオフィシャルモバイルファンクラブ！"
+      }
+    ]
+  }
+}

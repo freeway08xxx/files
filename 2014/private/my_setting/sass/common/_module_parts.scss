@@ -1,0 +1,565 @@
+@charset "utf-8";
+// ----------------------------------------------------
+// アイコン
+// ----------------------------------------------------
+/*
+
+# アイコン<!-- アイコン -->
+
+	<i class="t-sprite-icon t-sprite-icon-icon01"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon02"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon03"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon04"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon05"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon06"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon07"></i>
+	<i class="t-sprite-icon t-sprite-icon-icon08"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon09"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon10"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon11"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon12"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon13"></i>
+  <i class="t-sprite-icon t-sprite-icon-icon14"></i>
+*/
+
+
+
+// search
+$icon: sprite-map("sprite/icon/*.png");
+$sprites-icon: sprite-url($icon);
+.t-sprite-icon {
+  vertical-align: middle;
+  @include background-size(31px auto);
+}
+.t-sprite-icon-icon01 {
+  margin: -3px 3px 0 0; 
+  @include sprite-background(icon01, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon02 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon02, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon03 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon03, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon04 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon04, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon05 {
+  margin: -3px 3px 0 0;
+  @include sprite-background(icon05, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon06 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon06, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon07 {
+  @include sprite-background(icon07, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon08 {
+  @include sprite-background(icon08, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon09 {
+  @include sprite-background(icon09, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon10 {
+  @include sprite-background(icon10, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon11 {
+  @include sprite-background(icon11, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon12 {
+  @include sprite-background(icon12, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon13 {
+  @include sprite-background(icon13, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon14 {
+  @include sprite-background(icon14, $icon , $sprites-icon);
+}
+
+
+
+
+// ----------------------------------------------------
+// ヘッダー
+// ----------------------------------------------------
+/*
+
+# ヘッダー<!-- header -->
+
+    <!-- header -->
+    <header>
+      <ul class="t-header">
+        <li class="t-header__title">
+          <h1><a href="#">タイトル</a></h1>
+        </li>
+        <li class="t-header__home">
+          <a  href="http://auone.jp/" class="t-button__square">
+            <i class="t-sprite-icon t-sprite-icon-icon12"></i>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <!-- /header -->
+
+*/
+
+.t-header{
+  position: relative;
+  height:40px;
+  @include display-box;
+  @include box-align(center);
+  background: #fff;
+  padding-right: 10px;
+  border: {
+    bottom: 2px solid $corporate_color;
+  };
+}
+.t-header__title{
+  @include display-box;
+  @include box-flex(1);
+  @include font-size(18);
+  color:$base_font_color;
+  a{
+    display: block;
+    padding-left: 10px;
+    line-height: 2.4;
+  }
+}
+
+/*
+
+#### サブヘッダー
+
+    <!-- sub header -->
+    <div class="t-sub-header">
+      <h2>サブタイトルサブタイトルサブタイトルサブタイトルサブタイトルサブタイトルサブタイトルサブタイトル</h2>
+    </div>
+    <!-- /sub header -->
+
+*/
+
+.t-sub-header{
+  background: #ededed;
+  padding: 10px;
+  @include font-size(12);
+  text-align: center;
+}
+
+
+// ----------------------------------------------------
+// フッター
+// ----------------------------------------------------
+/*
+
+# フッター<!-- footer -->
+
+フッターリンク
+
+    	<!-- footer -->
+      <footer class="t-footer">
+        <ul class="t-footer__nav">
+          <li>
+            <a href="">機能設定</a>
+            <a href="">Facebook/LINE/<br/>メルマガなど</a>
+            <a href="">ヘルプ・<br/>お問い合わせ</a>
+          </li>
+          <li>
+            <a href="">WALLET ポイント<br/>使う・貯める</a>
+            <a href="">スタンプ貯めて<br/>WALLET ポイントに交換</a>
+            <a href="">プロフィール</a>
+          </li>
+        </ul>
+      </footer>
+    	<!-- /footer -->
+
+*/
+
+.t-footer__nav{ 
+  display: table;
+  width:100%;
+  border: {
+    top: 1px solid #b9b9b9;
+  };
+  li{
+    @include gradient-top-lighten(#f5f5f5,#dfdfdf);
+    display: table-row;
+    width: 100%;
+  }
+  a{
+    display: table-cell;
+    width: 33%;
+    height: 40px;
+    text-align:center;
+    vertical-align: middle;
+    border: {
+      right: 1px solid #b9b9b9;
+      bottom: 1px solid #b9b9b9;
+    };
+    &:last-child{
+      border-right:none;
+    }
+    @include font-size(10);
+  }
+}
+
+/*
+
+コピーライト
+
+    <footer class="t-footer__copyright">
+      <small>© KDDI</small>
+    </footer>
+
+*/
+.t-footer__copyright{
+  background: #f5f5f5;
+  display: block;
+  height: 40px;
+  line-height:3.5;
+  text-align:center;
+  @include font-size(10);
+}
+
+
+
+// ----------------------------------------------------
+// エラー
+// ----------------------------------------------------
+/*
+
+# エラー<!-- error -->
+
+エラー文字
+
+    <!-- error -->
+    <div class="t-error">
+      <p class="t-error__text">
+        エラーメッセージエラーメッセージ<br/>
+        エラーメッセージエラーメッセージ
+      </p>
+    </div>
+    <!-- /error -->
+
+*/
+.t-error{
+  text-align: center;
+  padding: 10px;
+  line-height:$line-height;
+  @extend %error;
+}
+.au-error__text{
+  @include font-size(12);
+}
+
+// ----------------------------------------------------
+// リンク
+// ----------------------------------------------------
+/*
+
+# リンク<!-- link -->
+
+右側矢印
+
+    <!-- link -->
+    <div class="t-link">
+      <a href="#">うたパスの詳細はこちら</a>
+    </div>
+    <!-- /link -->
+
+*/
+
+// 右側矢印
+.t-link{
+  margin-top:10px;
+  text-align:right;
+  a{
+  	padding-right:25px;
+    @include font-size(12);
+    @extend .t-arrow_right;
+  }
+}
+
+
+
+// ----------------------------------------------------
+// 見出し
+// ----------------------------------------------------
+/*
+
+# 見出し<!-- head -->
+
+#### 大見出し
+
+    <!-- head -->
+    <div class="t-head">
+      <h2 class="t-head__text">タイトル</h2>
+    </div>
+    <!-- /head -->
+
+*/
+//大見出し
+.t-head{
+  margin-top:10px;
+  border-bottom:1px solid $boder_color_lightgrey;
+}
+.t-head__text{
+  padding-left:10px;
+  line-height: 1.6;
+  @include font-size(18);
+}
+
+/*
+
+#### 中見出し
+
+    <!-- crosshead -->
+    <div class="t-crosshead">
+      <h2 class="t-crosshead__text">中見出し</h2>
+    </div>
+    <!-- /crosshead -->
+
+*/
+//中見出し
+.t-crosshead{
+  position: relative;
+  margin-top:10px;
+  height:35px;
+  @include gradient-top-lighten(#ffffff,#f8f8f8);
+  border: {
+    top: 2px solid $corporate_color;
+    bottom: 2px solid $boder_color_lightgrey;
+  };
+}
+.t-crosshead__text{
+  height: 100%;
+  padding-left: 10px;
+  line-height: 2.3;
+  @include font-size(16);
+  border: {
+    bottom: 1px solid #fff;
+  };
+}
+
+/*
+
+#### 中見出し(ボタンあり)
+
+    <!-- crosshead -->
+    <div class="t-crosshead">
+      <h2 class="t-crosshead__text">中見出し</h2>
+      <button class="t-crosshead__button">全て見る</button>
+    </div>
+    <!-- /crosshead -->
+
+    <!-- crosshead -->
+    <div class="t-crosshead">
+      <h2 class="t-crosshead__text">中見出し</h2>
+      <a href="#" class="t-crosshead__button">全て見る</a>
+    </div>
+    <!-- /crosshead -->
+
+*/
+//中見出しボタン
+.t-crosshead__button{
+ position: absolute;
+ top: 5px;
+ right:10px;
+  @extend .t-button__base;
+  @include font-size(11);
+  padding: 0 15px 0 5px;
+  height: 25px;
+  margin: 0;
+  &:after{
+    content:"";
+    width: 5px;
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -4px; 
+    @extend %ico_arrow_orenge;
+    @include background-size(5px 7px);
+  }
+}
+
+/*
+
+#### 小見出し
+
+    <!-- subhead -->
+    <div class="t-subhead">
+      <h2 class="t-subhead__text">小見出し</h2>
+    </div>
+    <!-- /subhead -->
+
+*/
+//小見出し
+.t-subhead{
+  margin-top:10px;
+  height: 25px;
+  border: {
+    top: 1px solid #fceae0;
+    bottom: 1px solid #fceae0;
+  };
+  background:#fffaec;
+}
+.t-subhead__text{
+  padding-left:10px;
+  line-height: 1.8;
+}
+
+
+
+// ----------------------------------------------------
+// テキストスタイル
+// ----------------------------------------------------
+/*
+
+# テキストスタイル<!-- text -->
+
+#### テキスト標準
+
+    <!-- text-->
+    <div class="t-text">
+      <div class="t-text__main">
+        標準テキスト。ディズニー専門チャンネル<em>「ディズニー・チャンネル」「ディズニージュニア」</em>をリアルタイム、または番組エピソード単位で楽しめる動画アプリ「WATCH」を提供。
+        さらに、<a href="#" class="">BSテレビ局</a>「Dlife(ディーライフ)」の海外ドラマ番組などがオンデマンドで観られる「Dlife」アプリも提供予定です。
+      </div>
+    </div>
+    <!-- /text-->
+
+*/
+.t-text{
+  @extend %space;
+  line-height:1.6;
+  em{
+    background:#ffe0cf;
+  }
+  a{
+    color: #0085c3;
+  }
+}
+
+// 通常テキスト
+.t-text__main{
+	@include font-size(16);
+}
+
+/*
+
+#### テキスト小
+
+    <!-- text small -->
+    <div class="t-text">
+      <div class="t-text__small">
+        テキスト小。情報は適宜更新してまいりますので、サービス開始まで楽しみにお待ちください。なお、サービス開始も本ページにてご案内いたします。
+      </div>
+    </div>
+    <!-- /text small -->
+
+*/
+// テキスト小
+.t-text__small{
+	@include font-size(12);
+}
+
+/*
+
+#### テキスト最小
+
+    <!-- text ex-->
+    <div class="t-text">
+      <span class="t-text__ex">テキスト最小</span>
+      <time class="t-text__ex">5月15日(木) 6時48分</time>
+    </div>
+    <!-- /text ex-->
+
+*/
+// テキスト最小
+.t-text__ex{
+	color: $color_gray;
+	@include font-size(10);
+}
+
+// ----------------------------------------------------
+// パン屑
+// ----------------------------------------------------
+
+/*
+
+# パン屑<!-- topic-path -->
+
+    <!-- topic-path -->
+    <div class="t-topic-path">
+      <ul class="t-topic-path__link">  
+        <li><a href="/">テキスト</a></li>  
+        <li><a href="/">テキストテキスト</a></li>
+      </ul>
+    </div>
+    <!-- /topic-path -->
+
+*/
+
+
+.t-topic-path{
+  @extend %space;
+}
+.t-topic-path__link{
+  >li{
+    display:inline-block;
+    @include font-size(10);
+    margin-right:10px; 
+    &:not(:last-child) { 
+      position: relative;
+      &:after{
+        @extend %arrow_gray;
+        right:-10px;
+      }
+    }
+
+  } 
+}
+
+
+
+// ----------------------------------------------------
+// ローディングアイコン
+// ----------------------------------------------------
+
+/*
+
+# ローディングアイコン<!-- loader -->
+
+    <!-- loader -->
+    <div class="t-loader">
+      <span class="t-loader__icon"></span>
+    </div>
+    <!-- /loader -->
+
+*/
+.t-loader{
+  @include display-box;
+  @include box-pack(center);
+  @include box-align(center);
+  margin: 10px 0;
+  .t-loader__icon{
+    @extend .t-sprite-icon;
+    @extend .t-sprite-icon-icon11;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

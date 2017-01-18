@@ -1,0 +1,77 @@
+<div class="modal-header">
+	<button class="pull-right btn btn-link close-icon" ng-click="$dismiss()">
+		<span class="glyphicon glyphicon-remove"></span>
+	</button>
+	<h4>数式を<span ng-show="!formula.models.is_edit">追加</span><span ng-show="formula.models.is_edit">編集</span>する</h4>
+</div>
+
+<div class="modal-body edit-formula">
+
+	<div class="form-group">
+		<div class="row">
+
+			<div class="col-xs-7">
+				<label class="control-label">
+					数式
+				</label>
+
+				<div class="formula-input-wrap clearfix">
+					<span>=</span>
+					<textarea class="form-control formula-input"
+					 ng-model="formula.models.formula"
+					 placeholder="[] ();"></textarea>
+				</div>
+			</div>
+
+			<div class="col-xs-5">
+				<div class="well well-sm">
+					<label class="control-label">
+						数式に追加できる項目
+					</label>
+
+					<div class="item-box row">
+						<div class="col-xs-3">
+							<ul class="list-unstyled symbols">
+								<li ng-repeat="(label, symbol) in common.config.formula">
+									<button type="button" class="btn btn-default"
+									 ng-click="formula.addSymbol(symbol)">
+										{{label}}
+									</button>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-9">
+							<div class="select-item">
+								<div class="btn-group-vertical scroll-wrap" role="group" aria-label="...">
+									<button type="button" class="btn btn-sm btn-default"
+									 ng-repeat="item in formula.models.element"
+									 ng-click="formula.addElement(item.key)">
+										{{item.name}}
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="alert alert-warning">
+		※ (), [] などの閉じ忘れに注意してください。<br>
+		※ 数式に追加できる項目以外の項目は含めないでください。<br>
+		※ 上記 IF、ISERROR 以外の関数も使用できます。<br>
+		（Excel2007以降にしか存在しない関数は不可）<br>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-sm btn-primary" ng-click="formula.save()"
+	 ng-class="{disabled: !formula.models.formula}">
+		変更を反映する
+	</button>
+	<button class="btn btn-sm btn-default" ng-click="formula.cancel()">
+		キャンセル
+	</button>
+</div>

@@ -1,0 +1,40 @@
+@charset "utf-8";
+// ===================================================================
+// mixin
+// ===================================================================
+@import "compass";
+
+// font size rem
+@mixin font-size($s:14) {
+    font-size:$s + px;
+    font-size:($s / 10) + rem;
+}
+
+// グラデーション
+@mixin gradient-top-lighten($light,$dark){
+	background: $dark;
+	background: linear-gradient($light 0%,$dark 100%);
+	background: -webkit-linear-gradient($light 0%,$dark 100%);
+	background: -webkit-gradient($light 0%,$dark 100%);
+}
+
+// sprite
+@mixin sprite-background($name, $sprites, $sprites-img) {
+  background-image: $sprites-img;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: image-height(sprite-file($sprites, $name)) / 2;
+  width: image-width(sprite-file($sprites, $name)) / 2;
+  $ypos: round(nth(sprite-position($sprites, $name), 2) / 2);
+  background-position: 0 $ypos;
+  $name:smart;
+}
+@mixin line-clamp($line) {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp:$line;
+	 display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+

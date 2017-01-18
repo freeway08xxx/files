@@ -1,0 +1,184 @@
+@charset "utf-8";
+// ----------------------------------------------------
+// グリッド
+// ----------------------------------------------------
+
+/*
+
+# グリッド<!-- grid -->
+
+#### ２カラム <!-- ２カラム -->
+
+	<!-- grid 2columns-->
+	<div class="t-grid">
+		<ul class="t-grid__2columns">
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 100px; height:100px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 100px; height:100px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- /grid -->
+
+*/
+
+/*
+
+#### 3カラム
+
+	<!-- grid 3columns-->
+	<div class="t-grid">
+		<ul class="t-grid__3columns">
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 50px; height:50px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 50px; height:50px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 50px; height:50px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 50px; height:50px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+			<li class="t-grid__column">
+				<div class="t-grid__inner">
+					<img src="" style="width: 50px; height:50px;">
+					<p>テキストテキストテキスト</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- /grid -->
+
+*/
+
+.t-grid{
+  @include clearfix;
+  img{
+    background:#ccc;
+  }
+}
+.t-grid__inner{
+  padding: 5px;
+}
+.t-grid__2columns{
+  width:100%;
+  .t-grid__column{
+    width:50%;
+  }
+}
+.t-grid__3columns{
+  width:100%;
+  .t-grid__column{
+    width:33.3%;
+  }
+}
+.t-grid__column{
+  float:left;
+  text-align:center;
+  p{
+    text-align:left;
+    margin-top:5px; 
+  }
+}
+
+
+// ----------------------------------------------------
+// テーブル
+// ----------------------------------------------------
+/*
+
+# テーブル<!-- table -->
+
+	<!-- table-->
+	<div class="t-table">
+		<table class="t-table__block">
+			<thead>
+				<tr>
+					<th>テキスト</th>
+					<th>テキスト</th>
+					<th>テキスト</th>
+					<th>テキスト</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>テキスト</td>
+					<td>テキスト</td>
+					<td>テキスト</td>
+					<td>テキスト</td>
+				</tr>
+				<tr>
+					<td>テキスト</td>
+					<td>テキスト</td>
+					<td>テキスト</td>
+					<td>テキスト</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- /table -->
+
+*/
+
+.t-table__block{
+  width: 100%;
+  border-collapse: collapse;
+  thead th{
+    width: 25%;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    color: #fff;
+    background: #ababab;
+    border-right: 1px solid #fff;
+    &:last-child{
+      border:none;
+    }
+    text-align: center;
+  }
+  tbody th, tbody td{
+    padding: 6px;
+    background-color: #fff;
+    border: {
+      bottom: 1px solid $boder_color_lightgrey;
+      right: 1px solid $boder_color_lightgrey;
+    };
+    text-align: center;
+    &:last-child{
+      border-right:none;
+    }
+  }
+  tbody th{
+    background: #eee;
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+<div class="client-combobox">
+	<div class="form-group ss-client-combobox-client">
+		<label class="title">クライアント</label>
+
+		<div ui-select ng-model="$parent.moduleModel.client" theme="bootstrap" ng-disabled="disabled" ng-change="ssComboboxChangeClient()" style="width:100%;">
+			<ui-select-match placeholder="クライアントを選択">{{$select.selected.display_name}}</ui-select-match>
+			<ui-select-choices repeat="client in client.master | filter:$select.search">
+			<div ng-bind-html="client.display_name | highlight: $select.search"></div>
+			</ui-select-choices>
+		</div>
+	</div>
+
+	<div class="ss-client-combobox-account" ng-if="config.account.isView">
+		<div class="row">
+			<div class="col-xs-6">
+				<span class="glyphicon glyphicon-transfer icon-trans"></span>
+
+				<div class="account-header clearfix">
+					<h5 class="control-label">アカウント選択（<span class="count">{{accounts.countSelected}}</span>/{{accounts.countMax}}件）</h5>
+
+					<button type="button" class="btn btn-default btn-xs pull-right" ng-click="clickAccountAll()"><span ng-show="ssClientComboboxSelectText">絞込</span>全選択</button>
+				</div>
+
+				<div class="area-title">アカウント一覧</div>
+
+				<div class="form-group form-group-sm has-feedback search-area">
+					<input type="text" class="form-control input-sm" name="text" ng-model="$parent.ssClientComboboxSelectText" placeholder="アカウントID,アカウント名,メディア名など" ng-change="changeAccountSelectQuery()" />
+					<span class="glyphicon glyphicon-search form-control-feedback"></span>
+				</div>
+
+				<ul class="list-group" name="account_id_list">
+					<li class="option list-group-item account_id_list disable-select"
+						ng-repeat="account in selectAccountViewList | orderBy:'media_id':false"
+						ng-click="clickAccount($event,account)"
+						ng-mouseover="addHoverAccount($event,account)">
+					<span class="label id">{{account.account_id}}</span> <img ng-if="!!account.icon" class="icon-media" ng-src={{account.icon}}><span ng-if="!account.icon">({{account.media_name}})</span>
+						<br>
+						{{account.account_name}}
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-xs-6">
+				<div class="account-header clearfix">
+					<button type="button" class="btn btn-default btn-xs pull-right" ng-click="clickReleaseAccountAll()"><span ng-show="ssClientComboboxSelectedText">絞込</span>全解除</button>
+				</div>
+
+				<div class="area-title selected">選択済み</div>
+
+				<div class="form-group form-group-sm has-feedback search-area">
+					<input type="text" class="form-control input-sm" name="text" ng-model="$parent.ssClientComboboxSelectedText" placeholder="アカウントID,アカウント名,メディア名など" ng-change="changeAccountSelectedQuery()" />
+					<span class="glyphicon glyphicon-search form-control-feedback"></span>
+				</div>
+
+				<ul class="list-group" name="account_id_list">
+					<li class="option list-group-item account_id_list disable-select" ng-repeat="account in selectedAccountViewList | orderBy:'media_id':false" ng-click="clickAccount($event,account)" ng-mouseover="addHoverAccount($event,account)">
+						<span class="label id">{{account.account_id}}</span> <img ng-if="!!account.icon" class="icon-media" ng-src={{account.icon}}><span ng-if="!account.icon">({{account.media_name}})</span>
+						<br>
+						{{account.account_name}}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="ss-client-combobox-category-genre" ng-if="config.categoryGenre.isView">
+		<label class="title">カテゴリジャンル</label>
+
+		<div ui-select ng-model="$parent.moduleModel.categoryGenre" theme="select2" ng-disabled="disabled" style="width:100%;" ng-change="changeCategoryGenre()">
+			<ui-select-match placeholder="カテゴリジャンル名を選択">{{$select.selected.category_genre_name}}</ui-select-match>
+			<ui-select-choices repeat="categorygenre in categorygenres.master | filter:$select.search">
+			<div ng-bind-html="categorygenre.category_genre_name | highlight: $select.search"></div>
+			</ui-select-choices>
+		</div>
+
+		<button type="button" class="btn btn-sm btn-link">
+			<a href="/sem/new/categorygenre/genre/entrance">カテゴリジャンルを編集する</a>
+		</button>
+	</div>
+
+
+	<div class="form-group ss-client-combobox-dimension" ng-if="config.dimension.isView">
+		<label class="title">ディメンション</label>
+
+		<div ui-select ng-model="$parent.moduleModel.dimension" theme="select2" ng-disabled="disabled" style="width:100%;" ng-change="changeDimension()">
+			<ui-select-match placeholder="ディメンションを選択">{{$select.selected.name}}</ui-select-match>
+			<ui-select-choices repeat="dimension in dimensions.master | filter:$select.search">
+			<div ng-bind-html="dimension.name | highlight: $select.search"></div>
+			</ui-select-choices>
+		</div>
+	</div>
+
+	<div id="ssClientComboboxHiddens">
+	</div>
+</div>

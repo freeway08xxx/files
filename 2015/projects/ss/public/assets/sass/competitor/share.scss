@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+/**
+ * 自動実行設定
+ */
+ .edit-schedule {
+	.child {
+		display: none;
+	}
+
+	.list-group-item {
+		padding-bottom: ($gridbase * 2);
+	}
+	.crawl_setting_area {
+		.list-inline {
+			li {
+				margin-right: ($gridbase * 2);
+			}
+		}
+		.media-label {
+			display: inline-block;
+			margin-right: (- $gridbase);
+			min-width: 80px;
+		}
+		div.checkbox {
+			margin: 0;
+		}
+	}
+ }
+
+/**
+ * キーワード紐付設定
+ */
+ .edit-keyword {
+ 	.register {
+ 		padding: ($gridbase * 2);
+ 		.form-label {
+ 			width: 15rem;
+ 			font-weight: bold;
+ 		}
+ 		.btn-area {
+ 			margin-top: $gridbase;
+ 		}
+ 	}
+
+ 	.keyword-input {
+ 		min-height: 60px;
+ 	}
+ 	div.checkbox {
+ 		@include border-radius($gridbase / 2);
+ 		padding-left: 20px;
+ 		margin: ($gridbase / 2) 0;
+ 		border: 1px solid $color_gray;
+ 		label {
+ 			display: block;
+ 			padding: $gridbase;
+ 		}
+ 	}
+ }
+
+/**
+ * クライアント設定
+ */
+.edit-client {
+	// 登録フォームエリア
+	.register {
+		padding: ($gridbase / 2);
+		vertical-align: middle;
+		.btn-insert {
+			float: right;
+			margin: ($gridbase / 2) ($gridbase / 2) 0 0;
+		}
+	}
+
+	.input-sort-num {
+		width: $gridbase * 6;
+	}
+	.input-client-name {
+		width: 50%;
+	}
+
+	.name {
+		white-space: nowrap;
+	}
+	// クライアント名をクリックした時のみ、編集モードへ移行させるため
+	div.name {
+		display: inline-block;
+		padding-left: 15px;
+	}
+	.edit_current {
+	    background-color: #FAF6BD;
+	}
+	.keyword-btn {
+	    margin-left: 15px;
+	}
+
+	//
+	.client-row {
+	    padding: 5px 3px;
+	    margin-bottom: 8px;
+
+		.controls {
+			float: right;
+			min-width: 210px;
+		    vertical-align: middle;
+		}
+	}
+
+	// modal window content
+	.popup-base {
+	    margin-top: 15px;
+	}
+}
+
+/**
+ * アクセスユーザー
+ */
+.edit-user {
+	.register {
+		.user-name {
+			width: 70%;
+		}
+		.btn {
+			margin-top: ($gridbase / 2);
+		}
+	}
+	.user-base {
+		margin-top: 15px;
+		.user-table-wrap {
+			max-height: 400px;
+			overflow-y: auto;
+			.table {
+				margin-bottom: 0;
+			}
+			.mail-address {
+				white-space: nowrap;
+			}
+			.controls {
+				text-align: right;
+			}
+		}
+	}
+}
+
+
+/**
+ * レポート
+ */
+.report {
+	.edit_base {
+		text-align: center;
+	}
+	.edit_tablebase {
+		margin-left:auto;
+		margin-right:auto;
+		text-align:justify;
+		width:1600px;
+	}
+	.edit_table {
+		float: left;
+		width: 500px;
+	}
+	.edit_classtable {
+		float: left;
+		width: 600px;
+	}
+	.edit_cassette {
+		margin : 2px 3px 2px 3px;
+		border: 1px solid #000;
+		position: relative;
+		min-height:40px;
+		height:40px;
+	}
+	.edit_current {
+		margin : 2px 3px 2px 3px;
+		border: 2px solid #000;
+		position: relative;
+		min-height:40px;
+		height:40px;
+		background-color: #FAF6BD;
+	}
+	.edit_delbtn {
+		position: absolute;
+		left: 2px;
+		bottom: 10px;
+	}
+	.edit_topshow {
+		position: absolute;
+		left: 8px;
+		bottom: 8px;
+	}
+	.edit_show {
+		position: absolute;
+		left: 35px;
+		bottom: 8px;
+	}
+	.edit_rightbtn {
+		position: absolute;
+		right: 2px;
+		bottom: 6px;
+	}
+	.edit_classlabel {
+		float: left;
+		width: 60px;
+	}
+	.edit_classlabel img{
+		margin-top: 150px;
+	}
+	.edit_float_clear {
+		clear: both;
+	}
+
+	.report_full_font {
+		font-size: 100%;
+	}
+
+	//
+	.toggle-text {
+		padding-bottom: ($gridbase * 2);
+		font-size: 1.2rem;
+	}
+	.top-control-area {
+		@include line-top(.12);
+		margin-top: ($gridbase * 2);
+		padding-top: ($gridbase * 2);
+		padding-bottom: ($gridbase * 2);
+	}
+
+	//
+	.detail-table {
+		@include line-top(.12);
+		td {
+			white-space: nowrap;
+		}
+	}
+}

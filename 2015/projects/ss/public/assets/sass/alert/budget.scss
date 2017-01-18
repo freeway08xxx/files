@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+.filter {
+	.list-inline {
+		margin-bottom: 0;
+	}
+	.h6 {
+		@include line-right(.12);
+		padding-right: $gridbase;
+		margin-right: $gridbase;
+	}
+}
+
+h5 {
+	&.label {
+		font-size: 1.25rem;
+		font-weight: normal;
+	}
+}
+.budget-search {
+	margin-bottom: 0;
+}
+
+.alert-list {
+	margin-bottom: ($gridbase * 3);
+}
+
+.report-table {
+	margin-top: ($gridbase * 2);
+	& > tbody {
+		& > tr {
+			& > td {
+				font-size: 1.2rem;
+				vertical-align: middle;
+
+				// Account Table Cell
+				&.media-budget {
+					text-align: right;
+					border-right: none !important;
+				}
+				&.media-budget-btn {
+					border-left: none !important;
+				}
+				&.mod-budget {
+					width: 180px;
+				}
+			}
+		}
+	}
+}
+
+table.media-budget-table {
+	tr {
+		th {
+			font-size: 1.3rem;
+			vertical-align: middle !important;
+		}
+	}
+}

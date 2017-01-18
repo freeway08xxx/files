@@ -1,0 +1,1 @@
+var app_directives = angular.module('accountStructure.directives', []);

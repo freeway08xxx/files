@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+@import "_partials/color";
+@import "_partials/var";
+@import "_partials/gradient";
+@import "_partials/shadow";
+@import "_partials/button";
+
+
+/* segmentbanner */
+.ms-container{
+	background: transparent url('../../img/vendor/switch.png') no-repeat 50% 50%;
+	width: 1200px;
+}
+
+.list-group-item {
+	padding-bottom: ($gridbase * 2);
+}
+
+.file {
+	padding: $gridbase 0;
+	margin-bottom: $gridbase;
+}
+
+.dl-area {
+	ul {
+		margin-bottom: 0;
+	}
+}
+
+$preview_padding: ($gridbase * 2);
+$banner_area_width: 400px + ($preview_padding * 2);
+
+.banner-preview {
+	background-color: $color_lightgray;
+	.area-wrap {
+		padding-top: $gridbase * 2;
+	}
+	.banner-area {
+		float: left;
+		width: $banner_area_width;
+	}
+	.param-area {
+		margin-left: $banner_area_width + ($gridbase * 3);
+	}
+
+	.preview-img {
+		@include border-radius(($gridbase / 2));
+		display: inline-block;
+		padding: $preview_padding;
+		background: $color_bg;
+	}
+}
+
+
+.segmentbanner-description {
+	padding: $gridbase !important;
+	margin-bottom: 0;
+	.desc-list {
+		margin-top: ($gridbase * 2);
+		margin-bottom: 0;
+		li {
+			padding-bottom: ($gridbase / 2);
+		}
+	}
+}

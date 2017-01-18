@@ -1,0 +1,68 @@
+@charset "utf-8";
+//※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+// news固有css
+//※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+
+
+// ----------------------------------------------------
+// common
+// ----------------------------------------------------
+.news--logo{
+  vertical-align: sub;
+  padding-bottom: 1px;
+  }
+// ----------------------------------------------------
+// 行制御
+// ----------------------------------------------------
+.t-bx__item-text span,
+.news-slide_special--text{
+  @include line-clamp(2);
+  @include font-size(14);
+}
+
+.t-bx__item-text span{
+  line-height: 1.2;
+}
+
+// ----------------------------------------------------
+// アイコンスライト
+// ----------------------------------------------------
+
+/*
+# アイコン<!-- アイコン -->
+
+<i class="t-sprite-icon t-sprite-icon-icon01"></i>
+<i class="t-sprite-icon t-sprite-icon-icon02"></i>
+<i class="t-sprite-icon t-sprite-icon-icon03"></i>
+<i class="t-sprite-icon t-sprite-icon-icon04"></i>
+
+*/
+
+
+// search
+$icon: sprite-map("icon/*.png");
+$sprites-icon: sprite-url($icon);
+.t-sprite-icon {
+  vertical-align: middle;
+  @include background-size(36px auto);
+}
+.t-sprite-icon-icon01 {
+  margin: -3px 3px 0 0; 
+  @include sprite-background(icon01, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon02 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon02, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon03 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon03, $icon , $sprites-icon);
+}
+.t-sprite-icon-icon04 {
+  margin: -1px 3px 0 0;
+  @include sprite-background(icon04, $icon , $sprites-icon);
+}
+
+
+
+

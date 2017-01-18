@@ -1,0 +1,509 @@
+
+
+@charset "utf-8";
+// ----------------------------------------------------
+// プルダウン
+// ----------------------------------------------------
+
+/*
+
+# プルダウン<!-- select -->
+
+大
+
+    <!-- select -->
+    <div class="t-select">
+      <div class="t-select__layout">
+        <div class="t-select__select">
+          <select name="example" class="t-select__items">
+            <option value="example01" selected="selected">テキストテキストテキストテキストテキストテキストテキスト</option>
+            <option value="example02">テキストテキスト</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- /select -->
+
+*/
+
+/*
+
+小
+
+    <!-- grid 2columns-->
+    <div class="t-select">
+      <div class="t-grid">
+        <ul class="t-grid__2columns t-select__group">
+          <li class="t-grid__column">
+            <div class="t-select__layout">
+              <div class="t-select__select">
+                <select name="example" class="t-select__items">
+                  <option value="example01" selected="selected">テキストテキストテキストテキストテキストテキストテキスト</option>
+                  <option value="example02">テキストテキスト</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="t-grid__column">
+            <div class="t-select__layout">
+              <div class="t-select__select">
+                <select name="example" class="t-select__items">
+                  <option value="example01" selected="selected">テキストテキストテキストテキストテキストテキストテキスト</option>
+                  <option value="example02">テキストテキスト</option>
+                </select>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /grid -->
+
+*/
+
+.t-select{
+  @extend %space;
+}
+.t-select__layout{
+  position: relative;
+  height: 30px;
+  border: 1px solid #B3B3B3;
+  border-radius: $border-radius;
+  &:before{
+    position: absolute;
+    content:"";
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    @extend %gradient_gray;
+    border-radius: 0 3px 3px 0;
+  }
+  &:after{
+    position: absolute;
+    content:"";
+    top: 11px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 9px solid #fff;
+  }
+}
+.t-select__select{
+  position: absolute;
+  content:"";
+  top: 0;
+  left: 0;
+  width: 100%;
+  select{
+    width: 100%;
+    height: 30px;
+    padding: 0 40px 0 6px;
+    border: none;
+    background:transparent;
+    @include appearance(none);
+    color: $base_font_color;
+    @include font-size(12);
+  }
+}
+// 横並びの場合
+.t-select__group{
+  li:not(:last-child) { 
+    .t-select__layout{
+      margin-right:10px;    
+    }
+  }
+}
+
+// ----------------------------------------------------
+// チェックボックス
+// ----------------------------------------------------
+
+/*
+
+# チェックボックス<!-- checkbox -->
+
+    <!-- checkbox -->
+    <div class="t-checkbox">
+      <input type="checkbox" name="example" value="サンプル01" id="t-checkbox__item01" class="t-checkbox__item" checked>
+      <label for="t-checkbox__item01">サンプル01</label>
+      <input type="checkbox" name="example" value="サンプル02" id="t-checkbox__item02" class="t-checkbox__item">
+      <label for="t-checkbox__item02">サンプル01</label>
+    </div>
+    <!-- /checkbox -->
+
+*/
+
+.t-checkbox{
+  @extend %space;
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+.t-checkbox__item + label{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border-radius: 2px;
+  line-height: 1.2;
+  margin-left: 10px;
+  padding:8px 15px 5px 15px;
+}
+.t-checkbox__item + label:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -11px;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  border-radius: 2px;
+  background:#fff;
+  border: 1px solid $boder_color_gray;
+}
+.t-checkbox__item:checked + label:after {
+  content: '';
+  @include font-size(15);
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px; 
+  background: inline-image("icon_check.png") no-repeat;
+  @include background-size(12px 12px);
+}
+
+
+// ----------------------------------------------------
+// ラジオボタン
+// ----------------------------------------------------
+
+
+/*
+
+# ラジオボタン<!-- radio -->
+
+    <!-- radio -->
+    <div class="t-radio">
+      <input type="radio" name="example" value="サンプル01" id="t-radio__item01" checked>
+      <label for="t-radio__item01">サンプル01</label>
+      <input type="radio" name="example" value="サンプル02" id="t-radio__item02">
+      <label for="t-radio__item02">サンプル02</label>
+    </div>
+    <!-- /radio -->
+
+*/
+
+.t-radio{
+ @extend %space;
+ input[type="radio"] {
+  display: none;
+  }
+}
+.t-radio label{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border-radius: 2px;
+  line-height: 1.2;
+  margin-left: 10px;
+  padding:8px 15px 5px 15px;
+}
+.t-radio label:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -11px;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  border-radius: 22px;
+  background:#fff;
+  border: 1px solid $boder_color_gray;
+}
+.t-radio input[type="radio"]:checked + label:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  margin-top: -4px;
+  border-radius: 10px;
+  background: #333;
+}
+
+
+
+
+// ----------------------------------------------------
+// 検索窓 
+// ----------------------------------------------------
+
+/*
+
+# 検索窓<!-- serch -->
+
+大
+
+    <!-- serch large-->
+    <div class="t-search js-t-search">
+      <form action="" name="search" method="get">
+        <div class="t-search_inner-large">
+          <div class="t-search__box">
+            <input type="search" name="keyword" placeholder="検索ワードを入力" class="js-keyword">
+            <a class="t-search__clear js-search__clear" onclick="return false;">
+              <i class="t-sprite-search t-sprite-search-cross"></i>
+            </a>
+          </div>
+          <div class="t-search__submit">
+            <a href="" class="js-search-submit" onclick="return false;">検索</a>
+          </div>
+        </div>
+        <i class="t-sprite-search t-sprite-search-logo"></i>
+      </form>
+    </div>
+    <!-- /serch large-->
+
+*/
+
+
+/*
+
+小
+
+###### input type="submit" value=""でも大丈夫です
+
+    <!-- serch small-->
+    <div class="t-search">
+      <form action="" name="search" method="get">
+        <div class="t-search_inner-small">
+          <div class="t-search__box">
+            <input type="search" name="keyword" placeholder="検索ワードを入力">
+          </div>
+          <div class="t-search__submit">
+            <a href="" class="js-search-submit" onclick="return false;">検索</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- /serch small-->
+
+*/
+
+// search
+$search: sprite-map("sprite/search/*.png");
+$sprites-search: sprite-url($search);
+.t-sprite-search {
+  @include background-size(94px auto);
+}
+.t-sprite-search-logo {
+  float: right;
+  margin-top: 2px;
+  @include sprite-background(logo_google, $search , $sprites-search);
+}
+.t-sprite-search-cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -7px 0 0 -7px;
+  @include sprite-background(icon01, $search , $sprites-search);
+}
+.t-search{
+  @extend %space;
+  @include clearfix;
+}
+//枠
+%t-search_inner{
+  position: relative;
+  @include display-box;
+  border: 1px solid $boder_color_gray;
+  border-radius: $border-radius;
+  overflow: hidden; 
+  @include display-box;
+  @include box-align(center);
+  @include box-flex(1);
+  @include box-sizing(border-box);
+}
+//サイズ大
+.t-search_inner-large{
+  @extend %t-search_inner;
+  height: 44px;
+  .t-search__submit{
+    width: 50px;
+    line-height: 2.7;
+    @include font-size(15);
+  }
+}
+//サイズ小
+.t-search_inner-small{
+  @extend %t-search_inner;
+  height: 30px;
+  .t-search__submit{
+    width: 40px;
+    line-height: 2.5;
+    @include font-size(12);
+  }
+}
+.t-search__box{
+  position: relative;
+  height: 100%;
+  @include display-box;
+  @include box-align(center);
+  @include box-flex(1);
+  overflow: hidden;
+  padding: 0 30px 0 0;
+  input{
+    outline:0px none black;
+    border:0;
+    @include font-size(14);
+    @include appearance(none);
+    @include box-flex(1);
+    display: block;
+    height: 100%;
+    padding-left: 8px;
+    margin: 0;
+    padding: 0 0 0 10px;
+　　-webkit-tap-highlight-color:rgba(0,0,0,0);
+  }
+}
+
+//検索ボタン
+.t-search__submit{
+  display: block;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  @extend %gradient_gray;
+  border-left:1px solid $boder_color_gray;
+  border-radius: 0 1px 1px 0;
+  border:0;
+  input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border:0;
+  }
+}
+//xボタン
+.t-search__clear{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 30px;
+  height: 100%;
+  background: #fff;
+}
+
+
+
+// ----------------------------------------------------
+// 急上昇ワード
+// ----------------------------------------------------
+
+/*
+
+# 急上昇ワード <!--c-->
+
+    <!-- hotword -->
+    <div class="t-hotword">
+      <p class="t-hotword__label">
+        <a href="#####">急上昇：</a>
+      </p>
+      <ul class="t-hotword__words">
+        <li><a href="">テキストテキスト01</a></li>
+        <li><a href="">テキストテキスト01</a></li>
+        <li><a href="">テキストテキスト01</a></li>
+      </ul>
+    </div>
+    <!-- /hotword -->
+
+*/
+
+.t-hotword{
+  @extend %space;
+  @include display-box;
+  @include box-pack(center);
+  @include box-align(center);
+  @include font-size(12);
+}
+.t-hotword__words{
+  @include display-box;
+  @include box-flex(1);
+  li {
+    width:30%;
+    padding:0 5px;
+  }
+  a{
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @extend .t-button__base;
+    line-height: 1.5;
+    padding:0 5px;
+  }
+}
+
+
+// ----------------------------------------------------
+// 　入力フォーム
+// ----------------------------------------------------
+
+/*
+
+# 入力フォーム <!--form-->
+
+      <!-- input -->
+      <div class="t-form">
+        <p class="t-form__input--error">エラー文字エラー文字エラー文字エラー文字エラー文字<p>
+        <form action="" name="search" method="post">
+          <div class="t-form__input">
+            <input type="text" name="exsample" placeholder="">
+          </div>
+          <div class="t-button">
+            <button type="submit" class="t-button__submit">送信</button>
+          </div>
+          <div class="t-button">
+            <button type="submit" class="t-button__default">送信</button>
+          </div>
+        </form>
+      </div>
+      <!-- /input -->
+
+*/
+
+
+.t-form{
+  @extend %space;
+}
+.t-form__input--error{
+  @extend %error;
+  @include font-size(8);
+  padding: 6px 5px;
+  margin-bottom:10px;
+  border-radius: $border-radius;
+}
+.t-form__input{
+  border: 1px solid $boder_color_gray;
+  border-radius: $border-radius;
+  overflow: hidden;
+  height: 30px;
+  input{
+    width: 100%;
+    height: 100%;
+    border:0;
+    padding: 0 10px;
+    @include font-size(12);
+  }
+}
+
+
+
+
+
+
