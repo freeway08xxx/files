@@ -1,8 +1,8 @@
 $(function(){
 
     var $submit = $("#submit");
-
-    //conformクリック
+	
+    //conformクリック TEST
     $("#conform").on('click', function() {
         var is_disabled = $(this).is(':checked') ? false:true;
         $submit.prop('disabled', is_disabled);
