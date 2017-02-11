@@ -20,11 +20,6 @@ app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
 }]);
 
 
-
-
-
-
-
 app.constant('downloadlistConst', {
 	settings : {
 		tab:{
