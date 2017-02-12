@@ -9,6 +9,8 @@ angular.module('downloadlist', [
 
 
 
+
+
 var app = angular.module('downloadlist');
 /**
  * Loading Bar and spinner Display Option
