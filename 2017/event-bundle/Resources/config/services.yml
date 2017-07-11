@@ -1,0 +1,162 @@
+parameters:
+    photocreate_event.master_passwords:
+        - wataben4
+
+    # １枚無料画像ダウンロード対象種目 ID
+    photocreate_event.free_photo_download_subcategory_ids:
+        - 561 # ベビーフォト
+        - 562 # 入院中撮影
+        - 608 # ニューボーン
+        - 167 # 七五三
+        - 173 # 卒業式
+        - 172 # 成人式
+        - 174 # 入学式
+
+    # １枚無料画像ダウンロード URL のフォーマット
+    photocreate_event.free_photo_download_url_format: "http://freestudio.jp/p/?e=%%s&s=%%s"
+
+services:
+    # Event Listener
+    photocreate_event.event_listener.lock_by_password_unlock_history:
+        class: Photocreate\EventBundle\EventListener\LockByPasswordUnlockHistorySubscriber
+        arguments:
+            - '@annotations.reader'
+            - '@photocreate_event.service.unlock_page_checker'
+            - '@security.token_storage'
+            - '@router.default'
+            - 'photocreate_event.event_unlock'
+            - '@photocreate_event.service.album_password_unlocker'
+            - '@photocreate_event.repository.page'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.event_listener.access_control_by_page_open_status:
+        class: Photocreate\EventBundle\EventListener\AccessControlByPageOpenStatusSubscriber
+        arguments:
+            - '@annotations.reader'
+            - '@router.default'
+            - '@photocreate_event.repository.view_event'
+            - '@photocreate_event.service.preview_mode_session_storage'
+            - '%photocreate_event.store_id%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.event_listener.access_control_by_page_photo_search_type:
+        class: Photocreate\EventBundle\EventListener\AccessControlByPagePhotoSearchTypeSubscriber
+        arguments:
+            - '@annotations.reader'
+            - '@router.default'
+            - '@photocreate_event.repository.view_event'
+            - '%photocreate_event.store_id%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.event_listener.access_control_by_sponsored_print:
+        class: Photocreate\EventBundle\EventListener\AccessControlBySponsoredPrintSubscriber
+        arguments:
+            - '@annotations.reader'
+            - '@router.default'
+            - '@security.token_storage'
+            - '@photocreate_resource.repository.view_page'
+            - '@photocreate_resource.repository.photo'
+            - '@photocreate_event.service.sponsored_print_check'
+            - '%photocreate_event.store_id%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.event_listener.access_control_by_login:
+        class: Photocreate\EventBundle\EventListener\AccessControlByLoginSubscriber
+        arguments:
+            - '@annotations.reader'
+            - '@router.default'
+            - '@security.token_storage'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.event_listener.subscriber.sponsored_order_event:
+        class: Photocreate\EventBundle\EventListener\SponsoredOrderEventSubscriber
+        arguments:
+            - '@photocreate_mailer.usecase.send_sponsored_order_complete_mail'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    photocreate_event.subscriber.waiting_email_queue_event:
+        class: Photocreate\EventBundle\Subscriber\WaitingEmailQueueEventSubscriber
+        arguments:
+            - '@photocreate_mailer.usecase.send_register_waiting_email_queuee_mail'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    # Service
+    photocreate_event.service.api_uri_builder:
+        class: Photocreate\EventBundle\Service\APIUriBuilder
+        arguments:
+            - '%photocreate_event.api.host%'
+            - '%photocreate_event.api.version%'
+
+    photocreate_event.service.unlock_page_checker:
+        class: Photocreate\EventBundle\Service\UnlockPageChecker
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    photocreate_event.service.album_password_unlocker:
+        class: Photocreate\EventBundle\Service\AlbumPasswordUnlocker
+        arguments:
+            - '@photocreate_event.repository.album_password'
+            - '@photocreate_event.repository.password_unlock_history'
+            - '@doctrine.orm.entity_manager'
+
+    photocreate_event.service.preview_mode_session_storage:
+        class: Photocreate\EventBundle\Service\PreviewModeSessionStorage
+        arguments:
+            - '@request_stack'
+
+    photocreate_event.service.free_photo_download:
+        class: Photocreate\EventBundle\Service\FreePhotoDownloadService
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%photocreate_event.free_photo_download_subcategory_ids%'
+
+    photocreate_event.service.sponsored_print_check:
+        class: Photocreate\EventBundle\Service\SponsredPrintCheckService
+        arguments:
+            - '@photocreate_resource.usecase.search_sponsored_order'
+            - '@photocreate_resource.usecase.search_order'
+
+    # Repository
+    photocreate_event.repository.page:
+        class: Photocreate\ResourceBundle\Repository\PageRepository
+        factory:
+            - '@doctrine.orm.entity_manager'
+            - 'getRepository'
+        arguments:
+            - 'Photocreate\ResourceBundle\Entity\Page'
+
+    photocreate_event.repository.password_unlock_history:
+        class: Photocreate\ResourceBundle\Repository\PasswordUnlockHistoryRepository
+        factory:
+            - '@doctrine.orm.entity_manager'
+            - 'getRepository'
+        arguments:
+            - 'Photocreate\ResourceBundle\Entity\PasswordUnlockHistory'
+
+    photocreate_event.repository.album_password:
+        class: Photocreate\ResourceBundle\Repository\AlbumPasswordRepository
+        factory:
+            - '@doctrine.orm.entity_manager'
+            - 'getRepository'
+        arguments:
+            - 'Photocreate\ResourceBundle\Entity\AlbumPassword'
+
+    photocreate_event.repository.view_event:
+        class: Photocreate\ResourceBundle\Repository\View\EventRepository
+        factory:
+            - '@doctrine.orm.entity_manager'
+            - 'getRepository'
+        arguments:
+            - 'Photocreate\ResourceBundle\Entity\View\Event'
+
+    photocreate_event.twig_extension.sort_by_field:
+        class: Photocreate\EventBundle\Twig\SortByFieldExtension
+        tags:
+            - { name: twig.extension }

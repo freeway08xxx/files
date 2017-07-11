@@ -1,0 +1,29 @@
+{
+    "name": "photocreate/photocreate-event-bundle",
+    "type": "photocreate-event-bundle",
+    "description": "photocreate-event-bundle",
+    "require": {
+        "php": ">=7.0.6",
+        "symfony/dependency-injection": "~2.7|~3.0",
+        "symfony/config": "~2.7|~3.0",
+        "symfony/http-kernel": "~2.7|~3.0"
+    },
+    "require-dev": {
+        "symfony/yaml": "~2.3|~3.0",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Photocreate\\EventBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin",
+        "platform": {
+            "php": "7.0.6"
+        }
+    }
+}

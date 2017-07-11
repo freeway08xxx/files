@@ -1,0 +1,23 @@
+<div class="event_pass_form">
+<dl>
+<dt>「閲覧パスワード」を入力して写真を見る</dt>
+<dd>
+
+{% form_theme form ":form_theme:theme.html.twig" %}
+{{ form_start(form) }}
+
+{% if not form.vars.valid %}
+<div class="err_wrap"><p class="err">閲覧パスワードを正しく入力してください</p></div>
+{% endif %}
+
+<div class="wrap">
+<div class="pass">{{ form_widget(form.password) }}</div>
+<div class="btn"><button type="submit"><span>探す</span></button></div>
+</div>
+
+{{ form_end(form) }}
+
+<p class="note">※イベントに参加した方にお配りしたご案内用紙等に記載されている、閲覧パスワードを入力してください。</p>
+</dd>
+</dl>
+</div>

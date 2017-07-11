@@ -1,0 +1,542 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------
+Stylesheet for photochoice.jp
+FileName: set_product.scss
+--------------------------------------------------------------------- */
+
+/* import - 共通 */
+@import "compass";
+@import "config";
+@import "_mixin";
+
+
+/* セット商品 */
+
+/* areaのみ背景色を白に */
+.set_btn_area {
+	.set_product {
+		width: auto;
+		margin: 25px auto 25px;
+		background-color: #ffffff;
+	}
+}
+
+.set_product {
+	width: 95%;
+	max-width: 940px;
+	margin: 25px auto;
+	border: solid 1px #f0f0f0;
+	background-color: #f3f3f3;
+	position: relative;
+	text-align: center;
+	@include border-radius(6px);
+	.inner {
+		padding: 15px;
+		font-weight: bold;
+		p {
+			&.lead {
+				@include fz(11);
+			}
+			&.copy {
+				margin: 8px 0 0 0;
+				font-weight: normal;
+				@include fz(11);
+				line-height: 1.5em;
+			}
+			&.price {
+				margin: 12px 0 0 0;
+				@include fz(13);
+				color: #cc0000;
+			}
+			&.btn {
+				a {
+					margin: 8px 0 0 0;
+					padding: 14px 30px;
+					background-color: #fb9400;
+					display: inline-block;
+					@include fz(14);
+					color: #ffffff;
+					@include border-radius(6px);
+				}
+			}
+			&.about {
+				margin: 12px 0 0 0;
+				text-align: right;
+				font-weight: normal;
+				@include fz(13);
+				a {
+					color: #02c3c8;
+					span {
+						&.icon {
+							margin: 0 3px 2px 0;
+							vertical-align: middle;
+							//@include sprite-background('icon_about_set_product', $sprites-view_2x, $sprites-view_2x-image, 2, inline-block);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* モーダルウィンドウ */
+.modal-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 900;
+}
+/* セット商品モーダル */
+.set_product_window {
+	margin: 18px auto;
+	padding: 0 0 25px 0;
+	width: 95%;
+	max-width: 940px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	right: 0;
+	z-index: 1100;
+	.btn_close {
+		position: absolute;
+		top: -40px;
+		right: 0;
+		cursor: pointer;
+		text-align: right;
+		z-index: 1000;
+		span {
+			@include text-hideout;
+			position: relative;
+			display: block;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			&:before {
+				@include abs-center;
+				width: 35px;
+				height: 3px;
+				background: #ffffff;
+				content: "";
+				@include transform(rotate(45deg));
+			}
+			&:after {
+				@include abs-center;
+				width: 35px;
+				height: 3px;
+				background: #ffffff;
+				content: "";
+				@include transform(rotate(-45deg));
+			}
+		}
+	}
+	.title {
+		padding: 25px 0 25px 0;
+		width: 100%;
+		background: #fff;
+		@include fz(24);
+		text-align: center;
+		border: none;
+		@include border-top-left-radius(10px);
+		@include border-top-right-radius(10px);
+		@media #{$mobile} {
+			@include fz(15);
+		}
+	}
+	.wrap {
+		padding-bottom:30px;
+		width: 100%;
+		background-color: #ffffff;
+		@include border-bottom-left-radius(10px);
+		@include border-bottom-right-radius(10px);
+		@media #{$mobile} {
+			padding: 0 5px 30px;
+		}
+		dl {
+			width: 95%;
+			margin: 0 auto 20px;
+			padding-top: 20px;
+			display: table;
+			border-top: 1px solid #ccc;
+			position: relative;
+			&:before {
+				content:'';
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 1px;
+				background: #ccc;
+			}
+			&:first-child {
+				border-top: none;
+			}
+			dt {
+				width: 25%;
+				@include table-cell;
+				padding: 15px;
+				text-align: center;
+				color: #fff;
+				@include fz(18);
+				border-radius: 10px;
+				@media #{$mobile} {
+					display: block;
+					width: 100%;
+					margin-bottom: 20px;
+					border-radius: 5px;
+				}
+			}
+			dd {
+				@include table-cell;
+				padding:0 20px;
+				@media #{$mobile} {
+					display: block;
+					width: 100%;
+					padding: 0;
+				}
+				.detail {
+					width: 100%;
+					display: table;
+					@media #{$mobile} {
+						letter-spacing: -.4em;
+					}
+					h3 {
+						width: 35%;
+						@include table-cell;
+						text-align: center;
+						border-right: 1px solid #ccc;
+						@include fz(15);
+						img {
+							width: 100%;
+							max-width: 147px;
+						}
+						@media #{$mobile} {
+							@include fz(14);
+							width: 50%;
+							@include inline-block;
+							padding: 20px 0;
+							letter-spacing: normal;
+						}
+					}
+					.price {
+						width: 30%;
+						@include table-cell;
+						text-align: center;
+						@media #{$mobile} {
+							width: 50%;
+							@include inline-block;
+							padding: 0;
+							letter-spacing: normal;
+						}
+						p {
+							color: #c30012;
+							font-weight: bold;
+							strong {
+								@include fz(24);
+							}
+							& + p {
+								margin-top: 10px;
+							}
+						}
+					}
+					div.btn {
+						width: 35%;
+						@include table-cell;
+						text-align: center;
+						padding: 10px;
+						padding-right: 0;
+						@media #{$mobile} {
+							clear: both;
+							width: 70%;
+							display: block;
+							padding: 0;
+							letter-spacing: normal;
+							margin: 20px auto 0;
+						}
+						a {
+							display: block;
+							text-align: center;
+							color: #fff;
+							border-radius: 10px;
+							position: relative;
+							height: 70px;
+							line-height: 70px;
+							@media #{$mobile} {
+								height: 50px;
+								line-height: 50px;
+								border-radius: 5px;
+							}
+							&:after {
+								@include arrow-r(#fff,7px,0,10px,0,auto);
+							}
+						}
+					}
+				}
+				.photoset_note {
+					width: 100%;
+					text-align: right;
+					@media #{$mobile} {
+						text-align: center;
+					}
+				}
+			}
+			&.alldata_dl, &.alldata_dl_print3, &.data_dl_3 {
+				dt {
+					background: #76bbc9;
+				}
+				dd {
+					.btn {
+						a {
+							background: #76bbc9;
+						}
+					}
+				}
+			}
+			&.alldata, &.alldata_print3, &.alldata_allprint, &.data5_allprint, &.data3 {
+				dt {
+					background: #dfb750;
+				}
+				dd {
+					.btn {
+						a {
+							background: #dfb750;
+						}
+					}
+				}
+			}
+			&.print3, &.data3 {
+				dt {
+					background: #7eb674;
+				}
+				dd {
+					.btn {
+						a {
+							background: #7eb674;
+						}
+					}
+				}
+			}
+			&.print2_daishi, &.print3_daishi {
+				dt {
+					background: #cb72ab;
+				}
+				dd {
+					.btn {
+						a {
+							background: #cb72ab;
+						}
+					}
+				}
+			}
+
+		}
+		& > div:first-child dl:before {
+			content:none;
+		}
+		.sdset_link {
+			margin-top: 10px;
+			a {
+				padding:4px 15px 4px 20px;
+				position: relative;
+				background: url(/img/common/cmn_icon_b.png) no-repeat;
+				@include background-size(18px auto);
+			             background-position: 0 -308px;
+			             &:hover {
+			             	@include opacity(0.7);
+			             }
+				&:after {
+					@include arrow_r(#666,7px,0,0,0,auto);
+				}
+			}
+		}
+		.credit {
+			margin-top: 10px;
+			@include fz(12);
+			@include text-indent;
+			@media #{$mobile} {
+				@include fz(10);
+				text-align: left;
+				width: 80%;
+				margin: 5px auto 0;
+			}
+		}
+		.close_btn {
+			border: 1px solid #ccc;
+			text-align: center;
+			padding: 24px 0;
+			display: block;
+			width: 100%;
+			max-width: 250px;
+			margin: 40px auto 0;
+			@include fz(14);
+			border-radius: 10px;
+			@media #{$mobile} {
+				padding: 14px 0;
+				border-radius: 5px;
+			}
+			&:hover {
+				@include opacity(0.7);
+			}
+			span {
+				padding-left: 25px;
+				position: relative;
+				&:before {
+					@include abs-center(0,auto,0,0);
+					width: 14px;
+					height: 2px;
+					background: #666;
+					content: "";
+					@include transform(rotate(45deg));
+				}
+				&:after {
+					@include abs-center(0,auto,0,0);
+					width: 14px;
+					height: 2px;
+					background: #666;
+					content: "";
+					@include transform(rotate(-45deg));
+				}
+			}
+		}
+	}
+	.wrapper {
+		padding-bottom:10px;
+		width: 100%;
+		background-color: #ffffff;
+		@include border-bottom-left-radius(10px);
+		@include border-bottom-right-radius(10px);
+
+		.multiple {
+			padding: 10px 10px 0 10px;
+			.multiple_title {
+				margin: 10px 0 0 0;
+				padding: 10px;
+				border: solid 1px #dedede;
+				border-bottom: none;
+				background-color: #daf0ff;
+				text-align: center;
+				font-weight: bold;
+				@include fz(12);
+			}
+			.multiple_inner {
+				padding-bottom: 10px;
+				border: solid 1px #dedede;
+			}
+			/* multipleが付いた時のcssの追加が可能
+			.inner .products_box dt {
+				color: #336699;
+			}
+			*/
+		}
+
+		.inner {
+			padding: 10px 10px 0 10px;
+			p {
+				&.set_text {
+					padding: 3px;
+					@include fz(12);
+					line-height: 1.4em;
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+			.products_box {
+				margin: 10px 0 0 0;
+				border: solid 1px #dedede;
+				width: 100%;
+				position: relative;
+				text-align: center;
+				font-weight: bold;
+				@include box-sizing(border-box);
+				dl {
+					padding: 15px 5px 18px;
+					background-color: #f2f2f2;
+					dt {
+						@include fz(15);
+						line-height: 1.3em;
+						span {
+							@include fz(12.5);
+						}
+					}
+					dd {
+						margin: 6px 0 0 0;
+						@include fz(12);
+						color: #cc0000;
+						span {
+							margin: 0 0 0 3px;
+							@include fz(19);
+						}
+					}
+				}
+				p {
+					&.icon_new {
+						position: absolute;
+						top: 0;
+						left: 0;
+						img {
+							width: 41px;
+							height: 41px;
+						}
+					}
+					&.illust {
+						margin: 20px auto 0 auto;
+						max-width: 400px;
+						img {
+							width: 100%;
+						}
+					}
+					&.btn {
+						max-width: 400px;
+						margin: 0 auto;
+						padding: 0 25px;
+						a {
+							margin: 20px 0 0 0;
+							padding: 14px 40px;
+							background-color: #2d7bb3;
+							display: block;
+							@include fz(15);
+							color: #ffffff;
+							@include border-radius(6px);
+							&.btn_dl {
+								background-color: #52b3c5;
+							}
+						}
+					}
+					&.btn_imagecut {
+						max-width: 400px;
+						margin: 0 auto;
+						padding: 0 25px;
+						a {
+							margin: 20px 0 0 0;
+							padding: 14px 5px;
+							border: 1px solid #85aecf;
+							background-color: #e4eff7;
+							display: block;
+							@include fz(13);
+							color: #5693bf;
+							@include border-radius(6px);
+						}
+					}
+					&.about {
+						margin: 20px 25px 25px 0;
+						text-align: right;
+						font-weight: normal;
+						@include fz(13);
+						a {
+							color: #02c3c8;
+							span {
+								margin: 0 3px 2px 0;
+								vertical-align: middle;
+								//@include sprite-background('icon_about_set_product', $sprites-view_2x, $sprites-view_2x-image, 2, inline-block);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

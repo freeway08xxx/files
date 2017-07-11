@@ -1,0 +1,138 @@
+##########################################
+# イベント検索系画面
+##########################################
+# イベント検索結果画面
+photocreate_event.event_search.results:
+    path:     /event-search/results
+    defaults: { _controller: PhotocreateEventBundle:EventSearch:result }
+
+
+##########################################
+# 種目トップ系画面
+##########################################
+# ベビーフォトトップ画面
+photocreate_event.event_subcategory.baby:
+    path:     /event-subcategory/baby
+    defaults: { _controller: PhotocreateEventBundle:EventSubcategory:baby }
+
+# フリースタジオトップ画面
+photocreate_event.event_subcategory.studio:
+    path:     /event-subcategory/studio
+    defaults: { _controller: PhotocreateEventBundle:EventSubcategory:studio }
+
+# 種目一覧画面
+photocreate_event.event_subcategory.list:
+    path:     /event-subcategory/subcategories/
+    defaults: { _controller: PhotocreateEventBundle:EventSubcategory:list }
+
+# 種目詳細画面（種目トップ画面）
+photocreate_event.event_subcategory.detail:
+    path:     /event-subcategory/subcategories/{subcategoryId}
+    defaults: { _controller: PhotocreateEventBundle:EventSubcategory:index }
+
+
+##########################################
+# イベント詳細系画面
+##########################################
+# 掲載準備中画面（公開通知メール登録画面）
+photocreate_event.event_waiting.index:
+    path:     /event-waiting/events/{eventId}/pages/{pageId}/albums
+    defaults: { _controller: PhotocreateEventBundle:EventWaiting:index }
+
+# 公開通知メール登録完了画面
+photocreate_event.event_waiting.complete:
+    path:     /event-waiting/events/{eventId}/pages/{pageId}/complete
+    defaults: { _controller: PhotocreateEventBundle:EventWaiting:complete }
+
+# 閲覧パスワード解除画面
+photocreate_event.event_unlock:
+    path:     /event-unlock/events/{eventId}/pages/{pageId}/albums
+    defaults: { _controller: PhotocreateEventBundle:EventUnlock:index }
+
+# 写真区分一覧画面
+photocreate_event.event_album:
+    path:     /event-album/events/{eventId}/pages/{pageId}/albums
+    defaults: { _controller: PhotocreateEventBundle:EventAlbum:index }
+
+# 写真区分一覧画面
+#    todo: このルーティングはいずれ消す
+#    文化統合サイト公開時に、誤ったURLパターンのQRコードをチラシに掲載したまま配布してしまった。
+#    暫定対応として、本来のURLへリダイレクトする。
+#    このルーティングでのアクセスがなくなる見込みになったタイミングで削除すること。
+#    （2017年4月13日）
+photocreate_event.event_album_redirect:
+    path: /event-album/events/{eventId}/pages/{pageId}/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: photocreate_event.event_album
+        permanent: true
+
+# イベント詳細会員ログイン画面
+photocreate_event.event_sigin_in.login:
+    path:     /{type}/events/{eventId}/pages/{pageId}/{suffix}/login
+    defaults: { _controller: PhotocreateEventBundle:EventSignIn:login }
+    requirements:
+        suffix: '.*'
+
+# イベントプレビュー開始 URL
+photocreate_event.event_preview.register:
+    path:     /event-preview/events/{eventId}/pages/{pageId}/register
+    defaults: { _controller: PhotocreateEventBundle:EventPreview:register }
+
+
+##########################################
+# 写真一覧系画面
+##########################################
+# 写真一覧画面
+photocreate_event.photo_list:
+    path:     /photo-list/events/{eventId}/pages/{pageId}/photos
+    defaults: { _controller: PhotocreateEventBundle:PhotoList:index }
+
+# 写真拡大画面
+photocreate_event.photo_list.zoom:
+    path:     /photo-list/events/{eventId}/pages/{pageId}/photos/{photoId}/zoom
+    defaults: { _controller: PhotocreateEventBundle:PhotoList:zoom }
+
+# セット商品選択画面
+photocreate_event.photo_list.photoset:
+    path:     /photo-list/events/{eventId}/pages/{pageId}/photosets/{code}
+    defaults: { _controller: PhotocreateEventBundle:PhotoList:photoset }
+
+# 写真非掲載依頼画面
+photocreate_event.photo_delete_request.form:
+    path:     /photo-delete-request/events/{eventId}/pages/{pageId}/photos/{photoId}/form
+    defaults: { _controller: PhotocreateEventBundle:PhotoDeleteRequest:form }
+
+# 写真非掲載系依頼完了画面
+photocreate_event.photo_delete_request.complete:
+    path:     /photo-delete-request/events/{eventId}/pages/{pageId}/photos/{photoId}/complete
+    defaults: { _controller: PhotocreateEventBundle:PhotoDeleteRequest:complete }
+
+
+##########################################
+# スポンサードプリント系画面
+##########################################
+# スポンサードプリントトップ画面
+photocreate_event.sponsored_print.index:
+    path:     /sponsored-print/events/{eventId}/pages/{pageId}/photos/{photoId}/code/{campaignCode}
+    defaults: { _controller: PhotocreateEventBundle:SponsoredPrint:index }
+
+# スポンサードプリント応募フォーム画面
+photocreate_event.sponsored_print.form:
+    path:     /sponsored-print/events/{eventId}/pages/{pageId}/photos/{photoId}/code/{campaignCode}/form
+    defaults: { _controller: PhotocreateEventBundle:SponsoredPrint:form }
+
+# スポンサードプリント応募内容確認画面
+photocreate_event.sponsored_print.confirm:
+    path:     /sponsored-print/events/{eventId}/pages/{pageId}/photos/{photoId}/code/{campaignCode}/confirm
+    defaults: { _controller: PhotocreateEventBundle:SponsoredPrint:confirm }
+
+# スポンサードプリント応募完了画面
+photocreate_event.sponsored_print.complete:
+    path:     /sponsored-print/events/{eventId}/pages/{pageId}/photos/{photoId}/code/{campaignCode}/complete
+    defaults: { _controller: PhotocreateEventBundle:SponsoredPrint:complete }
+
+# スポンサードプリント応募済みエラー画面
+photocreate_event.sponsored_print.ordered:
+    path:     /sponsored-print/events/{eventId}/pages/{pageId}/photos/{photoId}/code/{campaignCode}/ordered
+    defaults: { _controller: PhotocreateEventBundle:SponsoredPrint:ordered }

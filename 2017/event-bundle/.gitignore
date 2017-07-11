@@ -1,0 +1,6 @@
+/Resources/public/components/
+/Resources/private/typescript/**/*.js
+/vendor/
+composer.lock
+/bin/
+/.idea/

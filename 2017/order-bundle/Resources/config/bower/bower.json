@@ -1,0 +1,22 @@
+{
+  "name": "photochoice.jp",
+  "homepage": "https://github.com/Photocreate/photochoice.jp",
+  "authors": [
+    "photocreate.co.jp"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "1.5.5",
+    "angular-resource": "1.5.5",
+    "angular-messages": "1.5.5",
+    "angular-touch": "1.5.5",
+    "jquery": "2.2.4",
+    "lodash": "4.17.4",
+    "cropperjs": "0.3.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
