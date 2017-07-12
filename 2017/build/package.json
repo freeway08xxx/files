@@ -1,0 +1,41 @@
+{
+  "name": "minjsapp",
+  "version": "2.0.0",
+  "description": "min js app",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "lint": "gulp lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koh110/minjsapp.git"
+  },
+  "author": "koh110",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koh110/minjsapp/issues"
+  },
+  "homepage": "https://github.com/koh110/minjsapp",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.5.0",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "jquery": "^2.2.1",
+    "lodash": "^1.0.2 ",
+    "node-notifier": "^4.5.0",
+    "node-sass": "^3.7.0",
+    "webpack": "^1.12.14"
+  }
+}
